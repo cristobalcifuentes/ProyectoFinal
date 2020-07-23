@@ -1,4 +1,4 @@
-package com.involucionados.controladores;
+package com.involucionados.cotroladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.involucionados.modelo.entidades.Capacitacion;
-import com.involucionados.modelo.servicio.interfaces.ICapacitacionServicio;
+import com.involucionados.servicio.interfaces.ICapacitacionServicio;
 
 @Controller
 public class CapacitacionControlador {

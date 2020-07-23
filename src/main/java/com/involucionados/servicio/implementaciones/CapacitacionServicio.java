@@ -1,4 +1,4 @@
-package com.involucionados.modelo.servicio.implementaciones;
+package com.involucionados.servicio.implementaciones;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.involucionados.modelo.entidades.Capacitacion;
 import com.involucionados.modelo.repositorios.CapacitacionRepositorio;
-import com.involucionados.modelo.servicio.interfaces.ICapacitacionServicio;
+import com.involucionados.servicio.interfaces.ICapacitacionServicio;
 
 @Service
 public class CapacitacionServicio implements ICapacitacionServicio {
