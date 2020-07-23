@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+<!-- ******************************************************************************************************************* -->
+
+	<!-- DLECLARAMOS DATASOURCE -->
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="base" />
+		<property name="password" value="1234" />
+	</bean>
+
+<!-- ******************************************************************************************************************* -->
+
+	<!-- declaramos proveedor jpa -->
+
+	<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+	</bean>
+
+<!-- ******************************************************************************************************************* -->
+
+	<!-- creamoos entity manager factory -->
+
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
+		<property name="packagesToScan" value="com.involucionados.modelo.entidades" />
+	</bean>
+
+<!-- ******************************************************************************************************************* -->
+
+	<!-- creamos transaccion manager -->
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+<!-- ******************************************************************************************************************* -->
+
+	<!-- indicamos los paquetes del repositorio -->
+
+	<jpa:repositories base-package="com.involucionados.modelo.repositorios" />
+
+<!-- ******************************************************************************************************************* -->
+
+	<!-- escaneamos paquetes de servicio -->
+
+	<context:component-scan base-package="com.involucionados.modelo.servicio.implementaciones" />
+
+<!-- ******************************************************************************************************************* -->
+
+
+</beans>
