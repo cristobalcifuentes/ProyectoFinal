@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.involucionados.modelo.entidades.Capacitacion;
-import com.involucionados.modelo.repositorios.CapacitacionRepositorio;
+import com.involucionados.modelo.repositorios.ICapacitacionRepositorio;
 import com.involucionados.servicio.interfaces.ICapacitacionServicio;
 
 @Service
 public class CapacitacionServicio implements ICapacitacionServicio {
 	
 	@Autowired
-	CapacitacionRepositorio capacitacion;
+	ICapacitacionRepositorio capacitacion;
 	
 	@Autowired 
 	EntityManager em;

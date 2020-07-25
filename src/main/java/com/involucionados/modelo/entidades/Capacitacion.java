@@ -10,9 +10,9 @@ public class Capacitacion {
 	
 	@Id
 	//@GeneratedValue
-	@GeneratedValue(generator="autoincrementID") 
+	@GeneratedValue(generator="autoincrementCapacitacion") 
 	//@GeneratedValue(strategy=generationtype.AUTO)
-	@SequenceGenerator(name="autoincrementID",sequenceName="SEC_CAPACITACION", allocationSize=1)
+	@SequenceGenerator(name="autoincrementCapacitacion",sequenceName="SEC_CAPACITACION", allocationSize=1)
 	private int id;
 	
 	private String capacitacion;

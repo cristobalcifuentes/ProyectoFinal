@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.involucionados.modelo.entidades.Capacitacion;
 
 
-public interface CapacitacionRepositorio extends CrudRepository<Capacitacion, Integer> {
+public interface ICapacitacionRepositorio extends CrudRepository<Capacitacion, Integer> {
 
 }

@@ -15,6 +15,11 @@ inicio
 </a><br/>
 <a href="listaCapacitacion">lista de capacitaciones
 </a><br/>
+<a href="crearChek">crearChek
+</a><br/>
+
+
+
 
 
 </body>
