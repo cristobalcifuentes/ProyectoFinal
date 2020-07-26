@@ -15,7 +15,11 @@ inicio
 </a><br/>
 <a href="listaCapacitacion">lista de capacitaciones
 </a><br/>
+<a href="crearActividadMejora">Ingresar Actividad Mejora
+</a><br/>
 
+<a href="listaActividadMejora">lista de Actividades de Mejora
+</a><br/>
 
 </body>
 </html>
