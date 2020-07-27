@@ -18,11 +18,18 @@
 
 		</tr>
 
-		<c:forEach items="${lista}" var="list">
+		<c:forEach items="${listae}" var="List">
 			<tr>
 				<td>${list.getId()}</td>
-				<td>${list.getEstadosolicitud()}</td>
-				<td><a href="eliminarEstadoSolicitud/${list.getId()}">Eliminar</a></td>
+				<td>${list.getEstado()}</td>
+				<td><a href="elimnarEstadoSolictud/${list.getId()}">Eliminar</a></td>
 				<td><a href="editarEstadoSolicitud/${list.getId()}">Editar</a></td>
 			</tr>
 		</c:forEach>
+		
+	</table>
+
+
+
+</body>
+</html>

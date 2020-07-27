@@ -5,12 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.involucionados.modelo.entidades.EstadoSolicitud;
 import com.involucionados.modelo.repositorios.EstadoSolicitudRepositorio;
 import com.involucionados.servicio.interfaces.IEstadoSolicitud;
 
-
+@Service
 public class EstadoSolicitudServicio implements IEstadoSolicitud {
 	
 	@Autowired

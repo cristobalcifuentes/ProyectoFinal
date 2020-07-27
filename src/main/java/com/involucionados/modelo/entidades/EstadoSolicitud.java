@@ -14,14 +14,13 @@ public class EstadoSolicitud {
 	
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "Sec-Cli")
-    @SequenceGenerator(name = "Sec-Cli", sequenceName = "ESTADO_SOLICITUD_SEQ" ,allocationSize=1)
+	@GeneratedValue(generator="autoincrementID") 
+    @SequenceGenerator(name = "autoincrementID", sequenceName = "ESTADO_SOLICITUD_SEQ" ,allocationSize=1)
 	
 		@Column(name="ID")
 		private int id;
 	    @Column(name="ESTADO")
 		private String estado;
-		
 		
 		
 		public EstadoSolicitud(int id, String estado) {

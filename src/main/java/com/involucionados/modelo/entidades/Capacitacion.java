@@ -9,9 +9,7 @@ import javax.persistence.SequenceGenerator;
 public class Capacitacion {
 	
 	@Id
-	//@GeneratedValue
 	@GeneratedValue(generator="autoincrementID") 
-	//@GeneratedValue(strategy=generationtype.AUTO)
 	@SequenceGenerator(name="autoincrementID",sequenceName="SEC_CAPACITACION", allocationSize=1)
 	private int id;
 	

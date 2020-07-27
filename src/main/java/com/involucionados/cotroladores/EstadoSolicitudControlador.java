@@ -33,14 +33,14 @@ public class EstadoSolicitudControlador {
 
 	@RequestMapping("listaEstadoSolictud")
 	public String listaEstadoSolicitud(Model m) {
-		m.addAttribute("lista", EstadoSolicitud.listarEstadoSolicitud());
-		return "ListarEstadoSolictud";
+		m.addAttribute("listae", EstadoSolicitud.listarEstadoSolicitud());
+				return "LEstadoSolictud";
 	}
 
 	@RequestMapping("elimnarEstadoSolictud/{id}")
 	public String eliminarEstadoSolicitud(@PathVariable int id) {
 		EstadoSolicitud.eliminarEstadoSolicitud(id);
-		return "redirect:/ListaEstadoSolictud";
+		return "redirect:/LEstadoSolictud";
 	}
 
 	@RequestMapping("editarEstadoSolicitud/{id}")
@@ -49,17 +49,15 @@ public class EstadoSolicitudControlador {
 		EstadoSolicitud e = EstadoSolicitud.obtenerEstadoSolicitud(id);
 		System.out.println(e);
 		m.addAttribute("command", e);
-		
 		return "ModificarEstadoSolicitud";
 
 	}
 	
-	@PostMapping(value = "EditarEstadoSolicitud/GuardarEstadoSolicitud")
-	public String guardaredicionestado(EstadoSolicitud eso) {
-		
+	@PostMapping(value = "editarEstadoSolicitud/guardarestadosolicitud")
+	public String guardaredicionestado(EstadoSolicitud es) {
 		System.out.println("llego al controlador");
-		System.out.println(eso.toString());
-		EstadoSolicitud.agregarEstadoSolicitud(eso);
+		System.out.println(es.toString());
+		EstadoSolicitud.agregarEstadoSolicitud(es);
 		return "redirect:/index";
 
 	}

@@ -14,8 +14,8 @@
 		<div class="row">
 			<div class="col s12 m3">
 				<h2>Crear Estado</h2>
-				<label for="EstadoSolicitud">Ingrese Estado</label> <br>
-				<form:input type="text" id="EstadoSolicitud" name="EstadoSolicitud" style="width : 600px; heigth : 3px" path="EstadoSolicitud"/> 
+				<label for="estado">Ingrese Estado</label> <br>
+				<form:input type="text" id="estado" name="estado" style="width : 600px; heigth : 3px" path="estado"/> 
 				
 				<input type="submit" class="waves-effect waves-light btn"
 					value="guardar" />

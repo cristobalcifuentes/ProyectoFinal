@@ -1,8 +1,6 @@
 package com.involucionados.servicio.interfaces;
 
 import java.util.List;
-
-
 import com.involucionados.modelo.entidades.Capacitacion;
 
 
