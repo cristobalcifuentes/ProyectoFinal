@@ -15,6 +15,11 @@ inicio
 </a><br/>
 <a href="listaCapacitacion">lista de capacitaciones
 </a><br/>
+<a href="crearestadosolicitud">crear Estado de Solicitud
+</a><br/>
+<a href="listaEstadoSolicitud">listar Estado de Solicitud
+
+</a><br/>
 
 
 </body>

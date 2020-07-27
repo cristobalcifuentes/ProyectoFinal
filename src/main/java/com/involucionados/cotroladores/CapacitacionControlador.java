@@ -19,16 +19,13 @@ public class CapacitacionControlador {
 
 	@GetMapping(value = "/crearcapacitacion")
 	public String crearCapacitacion(Model m) {
-		
 		m.addAttribute("command", new Capacitacion());
-		
 		return "CrearCapacitacion";
 
 	}
 
 	@PostMapping(value = "/guardarcapacitacion")
 	public String guardarCapacitacion(Capacitacion c) {
-		
 		System.out.println(c.toString());
 		capacitacion.agregarCapacitacion(c);
 		
@@ -38,9 +35,7 @@ public class CapacitacionControlador {
 
 	@RequestMapping("listaCapacitacion")
 	public String listaCapacitacion(Model m) {
-		
 		m.addAttribute("lista", capacitacion.listarCapacitacion());
-
 		return "ListaCapacitacion";
 	}
 
