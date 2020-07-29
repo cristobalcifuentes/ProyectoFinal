@@ -2,21 +2,21 @@ package com.involucionados.cotroladores;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 @Controller
 public class ContraladorInicio {
 	
-	/*
-	 * @GetMapping(value={"/home", "", "/", "/index"}) public String inicio() {
-	 * return "index"; }
-	 */
 	
-	@GetMapping("/")
-	public String index() {
-		return "index1";
-	}
+	  @GetMapping(value={"/home", "", "/", "/index"}) 
+	  public String inicio() {
+	  return "index"; }
+	  
+	  @GetMapping(value="/index1") 
+	  public String inicio2() {
+	  return "index1"; }
+	 
 	
+
 	
 }

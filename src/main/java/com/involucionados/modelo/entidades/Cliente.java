@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="CLIENTE")
 public class Cliente {
-
+	
 	@Id
 	@Column(name="RUT" , length =12)
 	private String rut;
@@ -139,7 +139,6 @@ public class Cliente {
 	public void setTipEmpresa(String tipEmpresa) {
 		this.tipEmpresa = tipEmpresa;
 	}
-
 	public List<Pagos> getPagos() {
 		return pagos;
 	}

@@ -15,6 +15,18 @@ inicio
 </a><br/>
 <a href="listaCapacitacion">lista de capacitaciones
 </a><br/>
+<a href="crearChek">crearChek
+</a><br/>
+<a href="solicitudesPendientes">planificar visita
+</a><br/>
+<a href="solicitudesAgendadas">ingresar asesoria
+</a><br/>
+<a href="crearActividadMejora">Ingresar Actividad Mejora
+</a><br/>
+
+<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
+</a><br/>
+<br>
 
 
 </body>

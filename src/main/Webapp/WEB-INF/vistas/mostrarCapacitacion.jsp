@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-llego a editar capacitacion
-<a href="crearcapacitacion">crear capacitacion
-</a>
+
+<h1>${capacitacion.getCapacitacion()}</h1>
+
+<p>${capacitacion.getContenido()}</p>
+
 </body>
 </html>
