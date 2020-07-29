@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -22,43 +22,61 @@ public class Asesoria {
 	@SequenceGenerator(name = "autoincrementAsesoria", sequenceName = "SEC_ASESORIAS", allocationSize = 1)
 	private int id;
 	
-	@Column(name="VISITA_ID_1")
-	private String Asesoria;
+		
+	/**
+	 * 
+	 * 
+	 * revisar
+	 */
+	
+	@OneToMany(mappedBy="cheklist")
+	private Set<CheklistAsesoria> cheklist;
 	
 	
+	//este especifica
+	@OneToOne
+	@JoinColumn(name="VISITA_ID_1")
+	private Visita visita;
 	
-	@ManyToMany
-	@JoinTable(name = "CHEKLIST_ASESORIA", 
-	joinColumns =  @JoinColumn(name = "ASESORIA_ID") ,
-	inverseJoinColumns = @JoinColumn (name = "CHECKLIST_ID") )
-	private Set<Cheklist> chek;
+	@OneToMany(mappedBy="idasesoria")
+	private Set<ActividadMejora> mejoras;
 
 	
 	
-	
-
-
-
 	public Asesoria() {
 	}
+
 
 
 	public Asesoria(int id) {
 		this.id = id;
 	}
+	
+	
 
 
-	public Asesoria(String asesoria, Set<Cheklist> chek) {
-		Asesoria = asesoria;
-		this.chek = chek;
+
+	public Asesoria(Visita visita) {
+		this.visita = visita;
 	}
 
 
-	public Asesoria(int id, String asesoria, Set<Cheklist> chek) {
+
+	public Asesoria(Set<CheklistAsesoria> cheklist, Visita visita, Set<ActividadMejora> mejoras) {
+		this.cheklist = cheklist;
+		this.visita = visita;
+		this.mejoras = mejoras;
+	}
+
+
+
+	public Asesoria(int id, Set<CheklistAsesoria> cheklist, Visita visita, Set<ActividadMejora> mejoras) {
 		this.id = id;
-		Asesoria = asesoria;
-		this.chek = chek;
+		this.cheklist = cheklist;
+		this.visita = visita;
+		this.mejoras = mejoras;
 	}
+
 
 
 	public int getId() {
@@ -66,39 +84,105 @@ public class Asesoria {
 	}
 
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
 
-	public String getAsesoria() {
-		return Asesoria;
+
+	public Set<CheklistAsesoria> getCheklist() {
+		return cheklist;
 	}
 
 
-	public void setAsesoria(String asesoria) {
-		Asesoria = asesoria;
+
+	public void setCheklist(Set<CheklistAsesoria> cheklist) {
+		this.cheklist = cheklist;
 	}
 
 
-	public Set<Cheklist> getChek() {
-		return chek;
+
+	public Visita getVisita() {
+		return visita;
 	}
 
 
-	public void setChek(Set<Cheklist> chek) {
-		this.chek = chek;
+
+	public void setVisita(Visita visita) {
+		this.visita = visita;
 	}
+
+
+
+	public Set<ActividadMejora> getMejoras() {
+		return mejoras;
+	}
+
+
+
+	public void setMejoras(Set<ActividadMejora> mejoras) {
+		this.mejoras = mejoras;
+	}
+
 
 
 	@Override
 	public String toString() {
-		return "Asesoria [id=" + id + ", Asesoria=" + Asesoria + ", chek=" + chek + "]";
+		return "Asesoria [id=" + id + ", IDvisita=" + visita.getId() + "]";
 	}
 
 
 
-	
-	
 
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
+	

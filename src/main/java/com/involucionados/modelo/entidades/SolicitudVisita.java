@@ -1,11 +1,18 @@
 package com.involucionados.modelo.entidades;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "SOLICITUD_VISITA")
@@ -20,16 +27,52 @@ public class SolicitudVisita {
 	private int id;
 	
 	
-	@Column(name="ESTADO_SOLICITUD_ID")
-	private int estadoSolicitud;
+	
+	@ManyToOne
+	@JoinColumn(name="ESTADO_SOLICITUD_ID")
+	private EstadoSolicitud estado;
+	
+	@ManyToOne
+	@JoinColumn(name="TIPO_ID")
+	private TipoVisita tipo;
 	
 	
-	@Column(name="TIPO_ID")
-	private int tipoSolicitud;
 	
 	
-	@Column(name="CLIENTE_RUT")
-	private String rutCliente;
+	
+	@ManyToOne
+	@JoinColumn(name="CLIENTE_RUT")
+	private Cliente cliente;
+	
+	@OneToMany(mappedBy="solicitud")
+	private List<Visita> visita;
+	
+	
+	@Transient
+	private Visita visitaAsociada;
+	
+	
+	
+
+
+	public Visita getVisitaAsociada() {
+		return visitaAsociada;
+	}
+
+
+	public void setVisitaAsociada(Visita visitaAsociada) {
+		this.visitaAsociada = visitaAsociada;
+	}
+
+
+	public List<Visita> getVisita() {
+		return visita;
+	}
+
+
+	public void setVisita(List<Visita> visita) {
+		this.visita = visita;
+	}
 
 
 	public SolicitudVisita() {
@@ -41,18 +84,18 @@ public class SolicitudVisita {
 	}
 
 
-	public SolicitudVisita(int estadoSolicitud, int tipoSolicitud, String rutCliente) {
-		this.estadoSolicitud = estadoSolicitud;
-		this.tipoSolicitud = tipoSolicitud;
-		this.rutCliente = rutCliente;
+	public SolicitudVisita(EstadoSolicitud estado, TipoVisita tipo, Cliente cliente, Set<Visita> visitas) {
+		this.estado = estado;
+		this.tipo = tipo;
+		this.cliente = cliente;
 	}
 
 
-	public SolicitudVisita(int id, int estadoSolicitud, int tipoSolicitud, String rutCliente) {
+	public SolicitudVisita(int id, EstadoSolicitud estado, TipoVisita tipo, Cliente cliente, Set<Visita> visitas) {
 		this.id = id;
-		this.estadoSolicitud = estadoSolicitud;
-		this.tipoSolicitud = tipoSolicitud;
-		this.rutCliente = rutCliente;
+		this.estado = estado;
+		this.tipo = tipo;
+		this.cliente = cliente;
 	}
 
 
@@ -66,60 +109,55 @@ public class SolicitudVisita {
 	}
 
 
-	public int getEstadoSolicitud() {
-		return estadoSolicitud;
+	public EstadoSolicitud getEstado() {
+		return estado;
 	}
 
 
-	public void setEstadoSolicitud(int estadoSolicitud) {
-		this.estadoSolicitud = estadoSolicitud;
+	public void setEstado(EstadoSolicitud estado) {
+		this.estado = estado;
 	}
 
 
-	public int getTipoSolicitud() {
-		return tipoSolicitud;
+	public TipoVisita getTipo() {
+		return tipo;
 	}
 
 
-	public void setTipoSolicitud(int tipoSolicitud) {
-		this.tipoSolicitud = tipoSolicitud;
+	public void setTipo(TipoVisita tipo) {
+		this.tipo = tipo;
 	}
 
 
-	public String getRutCliente() {
-		return rutCliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
 
-	public void setRutCliente(String rutCliente) {
-		this.rutCliente = rutCliente;
+	public void setCliente(Cliente rutCliente) {
+		this.cliente = rutCliente;
 	}
 
 
 	@Override
 	public String toString() {
-		return "SolicitudVisita [id=" + id + ", estadoSolicitud=" + estadoSolicitud + ", tipoSolicitud=" + tipoSolicitud
-				+ ", rutCliente=" + rutCliente + "]";
+		return "SolicitudVisita [id=" + id + ", estado=" + estado + ", tipo=" + tipo + ", cliente=" + cliente
+				+ ", visitaAsociada=" + visitaAsociada + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
 	
 
+	
+
+
+	
+	
+	
+	
+	
+	
 }
+
+
+	

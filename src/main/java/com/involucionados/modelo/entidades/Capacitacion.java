@@ -17,7 +17,9 @@ public class Capacitacion {
 	
 	private String capacitacion;
 	
+	private String contenido;
 
+	
 	public Capacitacion() {
 	}
 
@@ -27,14 +29,16 @@ public class Capacitacion {
 	}
 
 
-	public Capacitacion(String capacitacion) {
+	public Capacitacion(String capacitacion, String contenido) {
 		this.capacitacion = capacitacion;
+		this.contenido = contenido;
 	}
 
 
-	public Capacitacion(int id, String capacitacion) {
+	public Capacitacion(int id, String capacitacion, String contenido) {
 		this.id = id;
 		this.capacitacion = capacitacion;
+		this.contenido = contenido;
 	}
 
 
@@ -58,10 +62,31 @@ public class Capacitacion {
 	}
 
 
+	public String getContenido() {
+		return contenido;
+	}
+
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
+	}
+
+
 	@Override
 	public String toString() {
-		return "capacitacion [id=" + id + ", capacitacion=" + capacitacion + "]";
+		return "Capacitacion [id=" + id + ", capacitacion=" + capacitacion + ", contenido=" + contenido + "]";
 	}
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
 	
 	
 	

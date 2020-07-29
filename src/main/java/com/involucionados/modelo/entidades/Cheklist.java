@@ -1,10 +1,13 @@
 package com.involucionados.modelo.entidades;
 
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -20,22 +23,11 @@ public class Cheklist {
 
 	@Column(name = "CHEKLIST")
 	private String chek;
-/*
-	@ManyToMany
-	@JoinTable(name = "CHEKLIST_ASESORIA", 
-	joinColumns =  @JoinColumn(name = "CHECKLIST_ID") ,
-	inverseJoinColumns = @JoinColumn (name = "ASESORIA_ID") )
-	private Set<Asesoria> asesoria;
-*/
+	
+	
+	@OneToMany(mappedBy="asesoria")
+	private Set<CheklistAsesoria> asesoria;
 
-	
-	/*	@ManyToMany
-	@JoinTable(name = "tabla intermedia", 
-	joinColumns =  @JoinColumn(name = "llave foranea de tabla intermedia que se relaciona con esta clase") ,
-	inverseJoinColumns = @JoinColumn (name = "llave foranea de tabla intermedia que se relaciona con la otra clase") )
-	private Set<Asesoria> asesoria;
-	
-	*/
 	 
 	public Cheklist() {
 	}
@@ -49,21 +41,7 @@ public class Cheklist {
 	
 
 
-/*
-	public Cheklist(String chek, Set<Asesoria> asesoria) {
-		this.chek = chek;
-		this.asesoria = asesoria;
-	}
 
-
-
-	public Cheklist(int id, String chek, Set<Asesoria> asesoria) {
-		this.id = id;
-		this.chek = chek;
-		this.asesoria = asesoria;
-	}
-
-*/
 
 
 	public Cheklist(String chek) {
@@ -107,18 +85,6 @@ public class Cheklist {
 	}
 
 
-/*
-	public Set<Asesoria> getAsesoria() {
-		return asesoria;
-	}
-
-
-
-	public void setAsesoria(Set<Asesoria> asesoria) {
-		this.asesoria = asesoria;
-	}
-
-*/
 
 
 	

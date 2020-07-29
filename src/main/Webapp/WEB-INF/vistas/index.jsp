@@ -17,9 +17,10 @@ inicio
 </a><br/>
 <a href="crearChek">crearChek
 </a><br/>
-
-
-
+<a href="solicitudesPendientes">planificar visita
+</a><br/>
+<a href="solicitudesAgendadas">ingresar asesoria
+</a><br/>
 
 
 </body>
