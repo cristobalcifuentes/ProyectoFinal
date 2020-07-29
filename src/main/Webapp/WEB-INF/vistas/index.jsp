@@ -18,8 +18,10 @@ inicio
 <a href="crearActividadMejora">Ingresar Actividad Mejora
 </a><br/>
 
-<a href="listaActividadMejora">lista de Actividades de Mejora
+<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
 </a><br/>
+<br>
+
 
 </body>
 </html>

@@ -47,14 +47,16 @@ body {
             <div class="card">
                 <div class="card-action blue white-text">
                 
-		<h4>Ingresar Actividad Mejora</h4>
+		<h4>Editar Actividad Mejora</h4>
 		</div>
-		<form:form action="guardarActividadMejora" method="post">
-			<table>
-				<tr>
+		
+		<form:form action="/editaractividadmejora" method="post">
+		<form:hidden path="id"/>
+		<table>
+		<tr>
 					<td>Id de Asesoria: </td>
-					<td><form:input path="idasesoria"/></td>
-				</tr>
+					<td><form:input path="idasesoria" type="text"/></td>
+				
 				<tr>
 					<td>Id de Estado de Mejora: </td>
 					<td><form:input path="idestadomejora" /></td>
@@ -64,28 +66,14 @@ body {
 					<td><form:input path="descripcion" /></td>
 				</tr>		
 				<tr>
-					<td colspan="2"><input type="submit" value="Ingresar"></td>
-					
-				    
+					<td colspan="2"><input type="submit" value="Ingresar" onclick="alert('Hasta el LOLY')"></td>
+				</tr>
 				
-				</tr>
-				<tr>
-				<td colspan="2"><a href="/index">Volver al inicio</a>
-				</tr>
 									
 			</table>
-			
-<%-- 		</form:form> --%>
-<%-- 		<form action="index"> --%>
-<!--         <table> -->
-<!--     		<tr> -->
-<!--     		<td colspan="2"><input type="submit" value="Inicio"/> </td> -->
-<!--     		</tr> -->
-<!--     	</table>  -->
-<%-- 		</form> --%>
+		</form:form>
         </div>
         </div>
     </div>
-    
 </body>
 </html>
