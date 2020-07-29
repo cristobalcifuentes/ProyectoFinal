@@ -67,8 +67,8 @@
                    			<td>${cliente.actividadEco}</td>
                    			<td>${cliente.tipEmpresa}</td>
                    			<td>${cliente.email}</td>
-                   			<td><a href="/Admin/getClientes/editusu?id=${cliente.usuario.id}">Editar</td>
-                   			<td><a href="/Admin/getClientes/editcli?rut=${cliente.rut}">Editar</td>
+                   			<td><a href="/Admin/getClientes/editusu?id=${cliente.usuario.id}" class="btn btn-success">Editar</td>
+                   			<td><a href="/Admin/getClientes/editcli?rut=${cliente.rut}" class="btn btn-success">Editar</td>
                         </tr>
                    	</c:forEach>
                     </tbody>

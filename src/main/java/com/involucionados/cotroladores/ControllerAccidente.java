@@ -41,11 +41,12 @@ public class ControllerAccidente {
 	}
 
 	@RequestMapping("/formAccidente")
-	public String comprobarDeuda(HttpSession sesion) {
+	public String comprobarDeuda(HttpSession sesion,RedirectAttributes attr) {
 		String res = "";
 		Cliente c = (Cliente) sesion.getAttribute("cliente");
 		String deuda = pService.comprobarDeuda(c.getRut());
 		if (deuda.equalsIgnoreCase("deuda")) {
+			attr.addFlashAttribute("deuda",true);
 			res = "redirect:/formulario";
 		} else {
 			res = "formAccidente";
