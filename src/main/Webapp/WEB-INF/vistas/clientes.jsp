@@ -45,14 +45,15 @@
                     <thead>
                         <tr>
                             <th>Rut</th>
-                            <th>RazonSocial</th>
-                            <th>Direccion</th>
-                            <th>Comuna</th>
-                            <th>Telefono</th>
-                            <th>Act.Economica</th>
-                            <th>Tip.Empresa</th>
-                            <th>EditarUsuario</th>
-                            <th>EditarCliente</th>
+                            <th>RazonS</th>
+                            <th>Dir</th>
+                            <th>Com</th>
+                            <th>Tel</th>
+                            <th>Act.Eco</th>
+                            <th>Tip.Emp</th>
+                            <th>Email</th>
+                            <th>EditarUsu</th>
+                            <th>EditarCli</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,11 +66,11 @@
                    			<td>${cliente.telefono}</td>
                    			<td>${cliente.actividadEco}</td>
                    			<td>${cliente.tipEmpresa}</td>
+                   			<td>${cliente.email}</td>
                    			<td><a href="/Admin/getClientes/editusu?id=${cliente.usuario.id}">Editar</td>
                    			<td><a href="/Admin/getClientes/editcli?rut=${cliente.rut}">Editar</td>
                         </tr>
                    	</c:forEach>
-                        
                     </tbody>
                 </table>
               </div>

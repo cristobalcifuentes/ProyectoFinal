@@ -36,9 +36,9 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="razon">Razon Social</label>
-                        <input type="hidden" id="rut" name="rut" value="${cliente.rut }"/>
-                        <input type="hidden" id="idusu" name="idusu" value="${cliente.usuario.id }"/>
-                        <input type="text" class="form-control" name="razon" id="razon" value="${cliente.razonsocial }"/>
+                        <input type="hidden" id="rut" name="rut" value="${cliente.rut}"/>
+                        <input type="hidden" id="idusu" name="idusu" value="${cliente.usuario.id}"/>
+                        <input type="text" class="form-control" name="razon" id="razon" value="${cliente.razonsocial}"/>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="direccion">Direccion</label>
@@ -46,13 +46,17 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="comuna">Comuna</label>
                         <input type="text" class="form-control" id="comuna" name="comuna" value="${cliente.comuna}">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="telefono">Telefono</label>
                         <input type="number" class="form-control" id="telefono" name="telefono" value="${cliente.telefono}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" value="${cliente.email}">
                     </div>
                 </div>
                 <div class="form-group">

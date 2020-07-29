@@ -76,7 +76,7 @@ public class ControllerAccidente {
 		 
 		 Trabajador t = new Trabajador(rutTra, nomTra, dirTra, comTra, telTra, sexTra,r);
 		 traS.saveTrabajador(t);
-		 attr.addFlashAttribute("message","Reporte Registrado Correctamente");
+		 attr.addFlashAttribute("reporte",true);
 		return "redirect:/formulario";
 	}
 	

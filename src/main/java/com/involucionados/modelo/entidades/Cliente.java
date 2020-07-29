@@ -43,6 +43,9 @@ public class Cliente {
 	@JoinColumn(name="USUARIO_ID")
 	private Usuario usuario;
 	
+	@Column(name = "EMAIL", length = 30)
+	private String email;
+	
 	//bi-direccion many-to-one asociado a Pago
 	@OneToMany(mappedBy="cliente")
 	private List<Pagos> pagos;
@@ -66,7 +69,7 @@ public class Cliente {
 	}
 
 	public Cliente(String rut, String razonsocial, String direccion, String comuna, int telefono, String actividadEco,
-			String tipEmpresa, Usuario usuario) {
+			String tipEmpresa, Usuario usuario,String email) {
 		super();
 		this.rut = rut;
 		this.razonsocial = razonsocial;
@@ -76,6 +79,7 @@ public class Cliente {
 		this.actividadEco = actividadEco;
 		this.tipEmpresa = tipEmpresa;
 		this.usuario = usuario;
+		this.email = email;
 	}
 
 
@@ -152,7 +156,15 @@ public class Cliente {
 		this.usuario = usuario;
 	}
 	
-	  public List<ReporteAccidente> getReporteAccidentes() { return
+	  public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public List<ReporteAccidente> getReporteAccidentes() { return
 	  reporteAccidentes; }
 	  
 	  public void setReporteAccidentes(List<ReporteAccidente> reporteAccidentes) {

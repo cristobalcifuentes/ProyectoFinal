@@ -25,11 +25,11 @@
 </head>
 
 <body>
-	<c:if test="${message}">
-		<script type="text/javascript">
-			alert(${message});
-		</script>
-	</c:if>
+	<c:if test="${reporte eq true }">
+  		<script type="text/javascript">
+  			alert("Reporte Registrado Exitosamente");
+  		</script>
+  	</c:if>
     <nav class="nav-wrapper blue lighten-1">
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>

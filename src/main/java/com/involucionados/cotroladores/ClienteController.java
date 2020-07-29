@@ -49,6 +49,7 @@ public class ClienteController {
 			String act = datos.get("economica");
 			String tipo = datos.get("tipo");
 			int idusu = Integer.parseInt(datos.get("idusu"));
+			String email = datos.get("email");
 			
 			Cliente c = new Cliente();
 			c.setRut(rut);
@@ -59,6 +60,7 @@ public class ClienteController {
 			c.setActividadEco(act);
 			c.setTipEmpresa(tipo);
 			c.setUsuario(user.obtenerUsuario(idusu));
+			c.setEmail(email);
 			
 			cser.editCliente(c);
 			attr.addFlashAttribute("succes",true);
