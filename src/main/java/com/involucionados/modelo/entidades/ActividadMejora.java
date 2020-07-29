@@ -16,7 +16,7 @@ public class ActividadMejora {
 	@ManyToOne
 	@JoinColumn(name="ASESORIA_ID")
 	private Asesoria idasesoria;
-	
+		
 	@Id
 	@GeneratedValue (generator="autoincrementoID")
 	@SequenceGenerator (name="autoincrementoID", sequenceName="MEJORAS_SEQ", allocationSize=1)
@@ -32,7 +32,7 @@ public class ActividadMejora {
 	public ActividadMejora() {
 	}
 
-	public ActividadMejora(Asesoria idasesoria, int id, int idestadomejora, String descripcion) {
+	public ActividadMejora(int idasesoria, int id, int idestadomejora, String descripcion) {
 		this.idasesoria = idasesoria;
 		this.id = id;
 		this.idestadomejora = idestadomejora;

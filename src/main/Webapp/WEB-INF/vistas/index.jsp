@@ -21,6 +21,12 @@ inicio
 </a><br/>
 <a href="solicitudesAgendadas">ingresar asesoria
 </a><br/>
+<a href="crearActividadMejora">Ingresar Actividad Mejora
+</a><br/>
+
+<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
+</a><br/>
+<br>
 
 
 </body>
