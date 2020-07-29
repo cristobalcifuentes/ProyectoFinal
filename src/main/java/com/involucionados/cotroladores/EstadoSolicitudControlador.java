@@ -1,5 +1,7 @@
 package com.involucionados.cotroladores;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,27 +35,29 @@ public class EstadoSolicitudControlador {
 
 	@RequestMapping("listaEstadoSolictud")
 	public String listaEstadoSolicitud(Model m) {
-		m.addAttribute("listae", EstadoSolicitud.listarEstadoSolicitud());
-				return "LEstadoSolictud";
+		System.out.println("prueba");
+		List<EstadoSolicitud> lista= EstadoSolicitud.listarEstadoSolicitud();
+		System.out.println(lista);
+		m.addAttribute("listae", lista );
+		    return "LEstadoSolicitud";
 	}
 
 	@RequestMapping("elimnarEstadoSolictud/{id}")
 	public String eliminarEstadoSolicitud(@PathVariable int id) {
 		EstadoSolicitud.eliminarEstadoSolicitud(id);
-		return "redirect:/LEstadoSolictud";
+			return "redirect:/listaEstadoSolictud";
 	}
 
-	@RequestMapping("editarEstadoSolicitud/{id}")
-	public String editarEstadoSolicitud(@PathVariable int id, Model m) {
-		
-		EstadoSolicitud e = EstadoSolicitud.obtenerEstadoSolicitud(id);
-		System.out.println(e);
-		m.addAttribute("command", e);
+	@RequestMapping("EditarEstadoSolicitud/{id}")
+	public String EditarEstadoSolicitud(@PathVariable int id, Model m) {
+		EstadoSolicitud estados = EstadoSolicitud.obtenerEstadoSolicitud(id);
+		System.out.println(estados);
+		m.addAttribute("command", estados);
 		return "ModificarEstadoSolicitud";
 
 	}
 	
-	@PostMapping(value = "editarEstadoSolicitud/guardarestadosolicitud")
+	@PostMapping(value = "/EditarEstadoSolicitud")
 	public String guardaredicionestado(EstadoSolicitud es) {
 		System.out.println("llego al controlador");
 		System.out.println(es.toString());

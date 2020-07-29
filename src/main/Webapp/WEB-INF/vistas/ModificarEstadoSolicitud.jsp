@@ -12,11 +12,11 @@
 
 
 
-<form:form action="guardarestadosolicitud" method="post">
+<form:form action="/EditarEstadoSolicitud" method="post">
 
 				<h2>modifique su capacitacion</h2>
 				<label for="EstadoSolicitud"> jjjhjhjh:</label> <br>
-				<form:input type="text" id="EstadoSolicitud" style="width : 600px;" name="EstadoSolicitudn" path="EstadoSolicitud"/> 
+				<form:input type="text" id="" style="width : 600px;" name="Estado" path="estado"/> 
 				<form:hidden path="id"/><br>
 				
 				<input type="submit" class="waves-effect waves-light btn"

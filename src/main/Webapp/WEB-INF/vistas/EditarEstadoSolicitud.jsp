@@ -8,7 +8,6 @@
 </head>
 <body>
 llego a editar estado
-<a href="CrearEstadoSolicitud">crear capacitacion
-</a>
+<a href="CrearEstadoSolicitud">crear capacitacion</a>
 </body>
 </html>

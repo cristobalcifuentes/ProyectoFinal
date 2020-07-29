@@ -49,7 +49,6 @@ public class CapacitacionControlador {
 
 	@RequestMapping("editarCapacitacion/{id}")
 	public String editarCapacitacion(@PathVariable int id, Model m) {
-		
 		Capacitacion cp = capacitacion.obtenerCapacitacion(id);
 		System.out.println(cp);
 		m.addAttribute("command", cp);
@@ -57,10 +56,7 @@ public class CapacitacionControlador {
 		return "modificarCapacitacion";
 
 	}
-	
-	
-	
-	
+		
 	@PostMapping(value = "editarCapacitacion/guardarcapacitacion")
 	public String guaedarEdicionCapac(Capacitacion c) {
 		
