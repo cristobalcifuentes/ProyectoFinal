@@ -1,8 +1,6 @@
 package com.involucionados.modelo.entidades;
 
-
-
-
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -41,35 +39,29 @@ public class Cliente {
 	@Column(name = "TIPO_DE_EMPRESA", length = 100)
 	private String tipEmpresa;
 	
+	@OneToOne
+	@JoinColumn(name="USUARIO_ID")
+	private Usuario usuario;
 	
-	//agergar relacion**************************************************************************
-	//@OneToOne
-	//@JoinColumn(name="USUARIO_ID")
-	//private Usuario usuario;
+	@Column(name = "EMAIL", length = 30)
+	private String email;
 	
-	
-	//agregar relacion*********************************************************************************
 	//bi-direccion many-to-one asociado a Pago
-	//@OneToMany(mappedBy="cliente")
-	//private List<Pagos> pagos;
+	@OneToMany(mappedBy="cliente")
+	private List<Pagos> pagos;
 
 	
 	//bi-direccion many-to-one asociado a ReporteAccidente
 	  
-	
-	//agregar relacion****************************************************************************
-	//@OneToMany(mappedBy="cliente")
-	//private List<ReporteAccidente> reporteAccidentes;
-	
-	
-	
-	
-	
-	
-
-	// @OneToMany(mappedBy="cliente")
-	 //private List<SolicitudVisita> solicitudVisitas;
-	 
+	@OneToMany(mappedBy="cliente") private List<ReporteAccidente>
+	reporteAccidentes;
+	  
+	//bi-direccion many-to-one asociado a to SolicitudVisita
+	  
+	/*
+	 * @OneToMany(mappedBy="cliente") private List<SolicitudVisita>
+	 * solicitudVisitas;
+	 */
 	 
 
 	public Cliente() {
@@ -77,7 +69,7 @@ public class Cliente {
 	}
 
 	public Cliente(String rut, String razonsocial, String direccion, String comuna, int telefono, String actividadEco,
-			String tipEmpresa) {
+			String tipEmpresa, Usuario usuario,String email) {
 		super();
 		this.rut = rut;
 		this.razonsocial = razonsocial;
@@ -86,7 +78,11 @@ public class Cliente {
 		this.telefono = telefono;
 		this.actividadEco = actividadEco;
 		this.tipEmpresa = tipEmpresa;
+		this.usuario = usuario;
+		this.email = email;
 	}
+
+
 
 	public String getRut() {
 		return rut;
@@ -143,7 +139,6 @@ public class Cliente {
 	public void setTipEmpresa(String tipEmpresa) {
 		this.tipEmpresa = tipEmpresa;
 	}
-/**************************************************************************************
 	public List<Pagos> getPagos() {
 		return pagos;
 	}
@@ -160,15 +155,12 @@ public class Cliente {
 		this.usuario = usuario;
 	}
 	
-	
-
-	
-	  public List<SolicitudVisita> getSolicitudVisitas() {
-		return solicitudVisitas;
+	  public String getEmail() {
+		return email;
 	}
 
-	public void setSolicitudVisitas(List<SolicitudVisita> solicitudVisitas) {
-		this.solicitudVisitas = solicitudVisitas;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public List<ReporteAccidente> getReporteAccidentes() { return
@@ -176,30 +168,15 @@ public class Cliente {
 	  
 	  public void setReporteAccidentes(List<ReporteAccidente> reporteAccidentes) {
 	  this.reporteAccidentes = reporteAccidentes; }
-************************************************************************************************/
-/*	@Override
-	public String toString() {
-		return "Cliente [rut=" + rut + ", razonsocial=" + razonsocial + ", direccion=" + direccion + ", comuna="
-				+ comuna + ", telefono=" + telefono + ", actividadEco=" + actividadEco + ", tipEmpresa=" + tipEmpresa
-				+ ", usuario=" + usuario + ", pagos=" + pagos + ", reporteAccidentes=" + reporteAccidentes
-				+ ", solicitudVisitas=" + solicitudVisitas + "]";
-	}*/
-
-	@Override
-	public String toString() {
-		return "Cliente [rut=" + rut + ", razonsocial=" + razonsocial + ", direccion=" + direccion + ", comuna="
-				+ comuna + ", telefono=" + telefono + ", actividadEco=" + actividadEco + ", tipEmpresa=" + tipEmpresa
-				+ "]";
-	}
-
-
-
-
-	
-	
 
 	  
-
+	/*
+	 * public List<SolicitudVisita> getSolicitudVisitas() { return solicitudVisitas;
+	 * }
+	 * 
+	 * public void setSolicitudVisitas(List<SolicitudVisita> solicitudVisitas) {
+	 * this.solicitudVisitas = solicitudVisitas; }
+	 */
 
 	
 	
