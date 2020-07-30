@@ -13,12 +13,15 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 <title>Enviar Notificaciones</title>
 </head>
 
 <body>
-	<c:if test="${mensaje}">
-		<c:out value="${mensaje }"></c:out>
+	<c:if test="${correo eq true}">
+		<script type="text/javascript">
+			alert("Notificacion Enviada Exitosamente");
+		</script>
 	</c:if>
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,7 +39,7 @@
 		</nav>
 	</div>
 	<div class="container" id="app">
-		<h4>Clientes</h4>
+		<h4>Deudores</h4>
 		<div class="row">
 			<div class="col-sm-12 col-md-8 col-lg-10">
 				<table class=" table table-striped
@@ -44,16 +47,22 @@
 					<thead>
 						<tr>
 							<th>Rut</th>
+							<th>RazonSocial</th>
+							<th>Telefono</th>
+							<th>Email</th>
 							<th>EnviarNotificacion</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${deudores}" var="cliente">
 							<tr>
-								<td>${cliente}</td>
+								<td>${cliente.rut}</td>
+								<td>${cliente.razonsocial}</td>
+								<td>${cliente.telefono}</td>
+								<td>${cliente.email}</td>
 								<td>
-									<button type="button" class="btn btn-warning"
-										data-toggle="modal" data-target="#modalDeudor" id="btn" value="${cliente}">
+									<button type="button" class="btn btn-info btn-block boton"
+										data-toggle="modal" data-target="#modalDeudor" id="btn" value="${cliente.rut}">
 										Enviar</button>
 								</td>
 							</tr>
@@ -73,15 +82,16 @@
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
-							<div class="modal-body">ENVIAR nOTIFICACION?</div>
-							<form action="/Admin/Notificaciones/enviar" method="post">
-								<input type="hidden" name="rut" id="rutenv">
-							</form>
+							<div class="modal-body">ENVIAR NOTIFICACION?</div>
+							<form action="/Admin/Notificaciones" method="post">
+								<input type="hidden" name="rut" id="rutenv" value="">
+							
 							<div class="modal-footer">
 								<button type="button" class="btn btn-danger"
 									data-dismiss="modal">No</button>
 								<button type="submit" class="btn btn-success">Si</button>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -93,16 +103,19 @@
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-		 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 	<script>
      $(document).ready(function () {
-       $('#mytable').DataTable();
-    })
- 	 </script>
+       $('#mytable').DataTable({
+	   });
+	});
+	$('.boton').click(function () { 
+		$('#rutenv').val($(this).prop('value'));
+	});	
+  </script>
 </body>
 
 </html>
