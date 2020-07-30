@@ -35,7 +35,7 @@
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -43,7 +43,7 @@
             <li>
                 <div class="divider"></div>
             </li>
-        <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
     </ul>
     						                       
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -56,16 +56,17 @@
 
 </html>
 
-	<form:form action="guardarcapacitacion" method="post">
-
-				<h2>Modifique Capacitaciï¿½n</h2>
-				<label for="capacitacion"> Capacitaciï¿½n:</label> <br>
-				<form:input type="text" id="capacitacion" style="width : 600px;" name="capacitacion" path="capacitacion"/> 
-				<form:hidden path="id"/><br>
-				
+	<form:form action="guardarestadosolicitud" method="post">
+		<div class="row">
+			<div class="col s12 m3">
+				<h2>Crear Estado</h2>
+				<label for="estado">Ingrese Estado</label> <br>
+				<form:input type="text" id="estado" name="estado" style="width : 600px; heigth : 3px" path="estado"/> 
+				                       
 				<input type="submit" class="waves-effect waves-light btn"
 					value="guardar" />
-			
+			</div>
+		</div>
 	</form:form>
 
 </body>

@@ -20,10 +20,14 @@
         h2 {
   			color: #c62828;
   			font-weight: normal;
-  			font-size: 40px;
+  			font-size: 30px;
   			font-family: Arial;
   			text-transform: uppercase;
 			}
+			 p {
+  			font-size: 1rem;
+  			text-align: left;
+		}
     </style>
     <title>Visita</title>
 </head>
@@ -35,7 +39,7 @@
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -43,8 +47,21 @@
             <li>
                 <div class="divider"></div>
             </li>
-        <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
     </ul>
+    
+    <form:form action="/EditarEstadoSolicitud" method="post">
+
+				<h2>Editar Estado de Soliictud</h2>
+				<label for="EstadoSolicitud"> Ingrese Modificación:</label> <br>
+				
+				<form:input type="text" id="" style="width : 600px;" name="Estado" path="estado"/> 
+				<form:hidden path="id"/><br>
+				
+				<input type="submit" class="waves-effect waves-light btn"
+					value="guardar" />
+			
+	</form:form>
     						                       
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
@@ -56,17 +73,4 @@
 
 </html>
 
-	<form:form action="guardarcapacitacion" method="post">
-
-				<h2>Modifique Capacitaciï¿½n</h2>
-				<label for="capacitacion"> Capacitaciï¿½n:</label> <br>
-				<form:input type="text" id="capacitacion" style="width : 600px;" name="capacitacion" path="capacitacion"/> 
-				<form:hidden path="id"/><br>
-				
-				<input type="submit" class="waves-effect waves-light btn"
-					value="guardar" />
-			
-	</form:form>
-
-</body>
-</html>
+	

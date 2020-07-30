@@ -28,29 +28,28 @@
           </nav>
       </div>
       <div class="container mt-4">
-          <h4>Listado de Capacitaciones</h4>
+          <h4>Estado Solicitud</h4>
           <div class="row">
               <div class="col-sm-12 col-md-8 col-lg-10">
                 <table class="table thead-light" id="mytable">
                     <thead>
                         <tr>
-                          <th>capacitacion</th>
-                          <th>eliminar</th>
-                          <th>editar</th>
-                          <th>detalle</th>
-
-						</tr>
+                            <th>ID</th>
+                            <th>Estado Solicitud</th>
+                            <th>Eliminar</th>
+                            <th>Editar</th>
+                            
+                        </tr>
                     </thead>
                     <tbody>
-                   	<c:forEach items="${lista}" var="list">
+                   	<c:forEach items ="${listae}" var="List">
 			<tr>
-				
-				<td>${list.getCapacitacion()}</td>
-				<td><a href="elimnarCapacitacion/${list.getId()}">eliminar</a></td>
-				<td><a href="editarCapacitacion/${list.getId()}">editar</a></td>
-				<td><a href="detalleCapacitacion/${list.getId()}">detalle</a></td>
-			</tr>
-		</c:forEach>
+				<td>${List.getId()}</td>
+				<td>${List.getEstado()}</td>
+				<td><a href="elimnarEstadoSolictud/${List.getId()}">Eliminar</a></td>
+				<td><a href="EditarEstadoSolicitud/${List.getId()}">Editar</a></td>
+                        </tr>
+                   	</c:forEach>
                     </tbody>
                 </table>
               </div>
