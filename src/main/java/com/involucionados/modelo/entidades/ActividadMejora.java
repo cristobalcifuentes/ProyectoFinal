@@ -32,7 +32,7 @@ public class ActividadMejora {
 	public ActividadMejora() {
 	}
 
-	public ActividadMejora(int idasesoria, int id, int idestadomejora, String descripcion) {
+	public ActividadMejora(Asesoria idasesoria, int id, int idestadomejora, String descripcion) {
 		this.idasesoria = idasesoria;
 		this.id = id;
 		this.idestadomejora = idestadomejora;
