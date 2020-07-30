@@ -41,7 +41,7 @@
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -49,11 +49,27 @@
             <li>
                 <div class="divider"></div>
             </li>
-        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
     </ul>
        <h1>Ingresos</h1>
      	
 
+<a href="crearcapacitacion">crear capacitacion
+</a><br/>
+<a href="listaCapacitacion">lista de capacitaciones
+</a><br/>
+<a href="crearChek">crearChek
+</a><br/>
+<a href="solicitudesPendientes">planificar visita
+</a><br/>
+<a href="solicitudesAgendadas">ingresar asesoria
+</a><br/>
+<a href="crearActividadMejora">Ingresar Actividad Mejora
+</a><br/>
+
+<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
+</a><br/>
+<br>
 <p><a href="crearcapacitacion">Crear Capacitacion</a></p>
 <p><a href="listaCapacitacion">Lista de Capacitaciones</a></p>
 <p><a href="crearestadosolicitud">Crear Estado de Solicitud</a></p>

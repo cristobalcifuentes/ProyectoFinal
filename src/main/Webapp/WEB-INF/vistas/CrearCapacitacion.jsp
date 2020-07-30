@@ -41,46 +41,50 @@ h2 {
 
 <body>
 
-	<nav class="nav-wrapper blue lighten-1">
-		<a href="#" data-target="slide-out" class="sidenav-trigger"><i
-			class="material-icons">menu</i></a> <a href="#" class="brand-logo">Sistema</a>
-		<ul id="nav-mobile" class="right  hide-on-med-and-down">
-			<li><a href="index.jsp">Inicio</a></li>
-			<li><a class="cs" href="logout">Cerrar Sesión</a></li>
-		</ul>
-	</nav>
-	<ul id="slide-out" class="sidenav">
-		<li><a href="index.jsp">Inicio</a></li>
-		<li>
-			<div class="divider"></div>
-		</li>
-		<li><a class="cs" href="logout">Cerrar Sesión</a></li>
-	</ul>
-
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			M.AutoInit();
-		});
-	</script>
+    <nav class="nav-wrapper blue lighten-1">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" class="brand-logo">Sistema</a>
+        <ul id="nav-mobile" class="right  hide-on-med-and-down">
+            <li><a href="index.jsp">Inicio</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+        </ul>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li><a href="index.jsp">Inicio</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+        <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+    </ul>
+    						                       
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                M.AutoInit();
+            });
+        </script>
 </body>
 
 </html>
 
-<form:form action="guardarcapacitacion" method="post">
-	<div class="row">
-		<div class="col s12 m3">
-			<h2>Crear Capacitación</h2>
-			<label for="capacitacion">Ingrese Capacitación</label> <br>
-			<form:input type="text" id="capacitacion" name="capacitacion"
-				style="width : 600px; heigth : 3px" path="capacitacion" />
-
-			<input type="submit" class="waves-effect waves-light btn"
-				value="guardar" />
+	<form:form action="guardarcapacitacion" method="post">
+		<div class="row">
+			<div class="col s12 m3">
+				<h2>Crear Capacitaciï¿½n</h2>
+				
+				<label for="capacitacion"><h4>TUTILO CAPACITACION</h4></label> <br>
+				
+				<form:input type="text" id="capacitacion" name="capacitacion" style="width : 600px; heigth : 3px" path="capacitacion"/> <br><br><br><br><br>
+				
+				<label for="contenido"><h4> CAPACITACION</h4></label> <br>
+				<textarea name="contenido" id="contenido"></textarea>
+<%-- 				<form:input type="textarea" path="contenido"/> --%>
+				
+				<input type="submit" class="waves-effect waves-light btn"
+					value="guardar" />
+			</div>
 		</div>
-	</div>
-</form:form>
-
+	</form:form>
+<!-- <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
 </body>
 </html>

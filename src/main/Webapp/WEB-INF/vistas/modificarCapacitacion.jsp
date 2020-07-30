@@ -35,7 +35,7 @@
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -43,7 +43,7 @@
             <li>
                 <div class="divider"></div>
             </li>
-        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
     </ul>
     						                       
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -58,8 +58,8 @@
 
 	<form:form action="guardarcapacitacion" method="post">
 
-				<h2>Modifique Capacitación</h2>
-				<label for="capacitacion"> Capacitación:</label> <br>
+				<h2>Modifique Capacitaciï¿½n</h2>
+				<label for="capacitacion"> Capacitaciï¿½n:</label> <br>
 				<form:input type="text" id="capacitacion" style="width : 600px;" name="capacitacion" path="capacitacion"/> 
 				<form:hidden path="id"/><br>
 				

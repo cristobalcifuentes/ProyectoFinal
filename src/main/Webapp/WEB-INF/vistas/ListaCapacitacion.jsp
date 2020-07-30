@@ -34,20 +34,21 @@
                 <table class="table thead-light" id="mytable">
                     <thead>
                         <tr>
-                            <th>ID</th>
-							<th>Nombre Capacitación</th>
-							<th>Eliminar</th>
-							<th>Editar</th>
+                          <th>capacitacion</th>
+                          <th>eliminar</th>
+                          <th>editar</th>
+                          <th>detalle</th>
 
 						</tr>
                     </thead>
                     <tbody>
                    	<c:forEach items="${lista}" var="list">
 			<tr>
-				<td>${list.getId()}</td>
+				
 				<td>${list.getCapacitacion()}</td>
-				<td><a href="elimnarCapacitacion/${list.getId()}">Eliminar</a></td>
-				<td><a href="editarCapacitacion/${list.getId()}">Editar</a></td>
+				<td><a href="elimnarCapacitacion/${list.getId()}">eliminar</a></td>
+				<td><a href="editarCapacitacion/${list.getId()}">editar</a></td>
+				<td><a href="detalleCapacitacion/${list.getId()}">detalle</a></td>
 			</tr>
 		</c:forEach>
                     </tbody>
