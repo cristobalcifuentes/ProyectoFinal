@@ -9,6 +9,13 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
+    
+    body {
+		margin-left: 0px;
+		margin-right: 10px;
+		margin-top: 0px;
+		margin-bottom: 10px;
+}
         .cs:hover{
             background-color: #c62828;
             color: whitesmoke;
@@ -60,11 +67,12 @@
 		<div class="row">
 			<div class="col s12 m3">
 				<h2>Crear Estado</h2>
-				<label for="estado">Ingrese Estado</label> <br>
+				
+				
+				<label for="estado" font->Ingrese Estado</label> <br>
 				<form:input type="text" id="estado" name="estado" style="width : 600px; heigth : 3px" path="estado"/> 
 				                       
-				<input type="submit" class="waves-effect waves-light btn"
-					value="guardar" />
+				<input type="submit" class="waves-effect waves-light btn"value="guardar" />
 			</div>
 		</div>
 	</form:form>
