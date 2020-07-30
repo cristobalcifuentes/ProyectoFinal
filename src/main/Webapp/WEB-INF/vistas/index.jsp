@@ -49,9 +49,8 @@
             <li>
                 <div class="divider"></div>
             </li>
-        <li><a class="cs" href="logout">Cerrar Sesi�n</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesion</a></li>
     </ul>
-       <h1>Ingresos</h1>
      	
 
 <a href="crearcapacitacion">crear capacitacion
@@ -64,16 +63,15 @@
 </a><br/>
 <a href="solicitudesAgendadas">ingresar asesoria
 </a><br/>
-<a href="crearActividadMejora">Ingresar Actividad Mejora
+
 </a><br/>
 
 <a href="listaActividadMejora">Listar/Editar Actividad de Mejora
 </a><br/>
 <br>
-<p><a href="crearcapacitacion">Crear Capacitacion</a></p>
-<p><a href="listaCapacitacion">Lista de Capacitaciones</a></p>
-<p><a href="crearestadosolicitud">Crear Estado de Solicitud</a></p>
-<p><a href="listaEstadoSolictud">Listar Estado de Solicitud</a></p>
+
+<a href="nuevaActividadMejora">Link ingresar actividad de mejora
+</a><br/>
 
                        
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
