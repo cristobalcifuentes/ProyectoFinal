@@ -43,7 +43,7 @@ public class Cliente {
 	@JoinColumn(name="USUARIO_ID")
 	private Usuario usuario;
 	
-	@Column(name = "EMAIL", length = 30)
+	@Column(name = "EMA_CLI", length = 30)
 	private String email;
 	
 	//bi-direccion many-to-one asociado a Pago
