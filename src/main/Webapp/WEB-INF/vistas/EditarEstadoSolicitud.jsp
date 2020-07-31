@@ -4,10 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>tinymce.init({selector:'textarea'});</script>
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
@@ -15,6 +11,12 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <style>
+body {
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
 
 .cs:hover {
 	background-color: #c62828;
@@ -34,16 +36,7 @@ h2 {
 	text-transform: uppercase;
 }
 </style>
-<title>CREAR CAPACITACION</title>
-
-<script
-	src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
-	referrerpolicy="origin"></script>
-<script>
-	tinymce.init({
-		selector : 'textarea'
-	});
-</script>
+<title>Visita</title>
 </head>
 
 <body>
@@ -53,7 +46,7 @@ h2 {
 			class="material-icons">menu</i></a> <a href="#" class="brand-logo">Sistema</a>
 		<ul id="nav-mobile" class="right  hide-on-med-and-down">
 			<li><a href="index.jsp">Inicio</a></li>
-			<li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+			<li><a class="cs" href="logout">Cerrar Sesión</a></li>
 		</ul>
 	</nav>
 	<ul id="slide-out" class="sidenav">
@@ -61,39 +54,32 @@ h2 {
 		<li>
 			<div class="divider"></div>
 		</li>
-		<li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+		<li><a class="cs" href="logout">Cerrar Sesión</a></li>
 	</ul>
 
-
-
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			M.AutoInit();
+		});
+	</script>
 </body>
 
-</html>
 
-<form:form action="guardarcapacitacion" method="post">
+<form:form action="guardarestadosolicitud" method="post">
 	<div class="row">
 		<div class="col s12 m3">
-			<h2>Crear Capacitacion</h2>
-
-			<label for="capacitacion"><h4>TUTILO CAPACITACION</h4></label> <br>
-
-			<form:input type="text" id="capacitacion" name="capacitacion"
-				style="width : 600px; heigth : 3px" path="capacitacion" />
-			<br> <br> <br> <br> <br> <label
-				for="contenido"><h4>CAPACITACION</h4></label> <br>
-			<textarea style="width : 1000px; min-height : 1000px;" name="contenido" id="contenido"></textarea>
+			<h2>Crear Estado</h2>
+			<label for="estado">Ingrese Estado</label> <br>
+			<form:input type="text" id="estado" name="estado"
+				style="width : 600px; heigth : 3px" path="estado" />
 
 			<input type="submit" class="waves-effect waves-light btn"
 				value="guardar" />
 		</div>
 	</div>
 </form:form>
-<script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
 
-<script>
-	tinymce.init({
-		selector : 'textarea'
-	});
-</script>
 </body>
 </html>

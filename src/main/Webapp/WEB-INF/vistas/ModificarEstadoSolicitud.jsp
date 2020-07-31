@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -12,17 +10,14 @@
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<script
-	src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
-	referrerpolicy="origin"></script>
-<script>
-	tinymce.init({
-		selector : 'textarea'
-	});
-</script>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <style>
+body {
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
 .cs:hover {
 	background-color: #c62828;
 	color: whitesmoke;
@@ -36,23 +31,18 @@
 h2 {
 	color: #c62828;
 	font-weight: normal;
-	font-size: 40px;
+	font-size: 30px;
 	font-family: Arial;
 	text-transform: uppercase;
 }
+
+p {
+	font-size: 1rem;
+	text-align: left;
+}
 </style>
+<title>Visita</title>
 </head>
-
-
-
-
-
-
-
-
-
-
-
 
 <body>
 
@@ -61,7 +51,7 @@ h2 {
 			class="material-icons">menu</i></a> <a href="#" class="brand-logo">Sistema</a>
 		<ul id="nav-mobile" class="right  hide-on-med-and-down">
 			<li><a href="index.jsp">Inicio</a></li>
-			<li><a class="cs" href="logout">Cerrar Sesion</a></li>
+			<li><a class="cs" href="logout">Cerrar Sesión</a></li>
 		</ul>
 	</nav>
 	<ul id="slide-out" class="sidenav">
@@ -69,35 +59,34 @@ h2 {
 		<li>
 			<div class="divider"></div>
 		</li>
-		<li><a class="cs" href="logout">Cerrar Sesion</a></li>
+		<li><a class="cs" href="logout">Cerrar Sesión</a></li>
 	</ul>
 
+	<form:form action="/EditarEstadoSolicitud" method="post">
 
-
-	<form:form action="guardarcapacitacion" method="post">
-
-		<h2>modifique su capacitacion</h2>
-		<label for="capacitacion"> titulo:</label>
+		<h2>Editar Estado de Soliictud</h2>
+		<label for="EstadoSolicitud"> Ingrese Modificación:</label>
 		<br>
-		<form:input type="text" id="capacitacion" style="width : 600px;"
-			name="capacitacion" path="capacitacion" />
+
+		<form:input type="text" id="" style="width : 600px;" name="Estado"
+			path="estado" />
 		<form:hidden path="id" />
 		<br>
-		<textarea name="contenido" id="contenido">${capacitacion.getContenido()}</textarea>
 
 		<input type="submit" class="waves-effect waves-light btn"
 			value="guardar" />
 
 	</form:form>
 
-
-
-
-
-
-
-
-
-
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+            document.addEventListener('DOMContentLoaded', function () {
+                M.AutoInit();
+            });
+        </script>
 </body>
+
 </html>
+
+

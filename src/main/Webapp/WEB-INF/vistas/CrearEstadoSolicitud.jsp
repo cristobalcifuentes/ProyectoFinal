@@ -9,6 +9,13 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
+    
+    body {
+		margin-left: 0px;
+		margin-right: 10px;
+		margin-top: 0px;
+		margin-bottom: 10px;
+}
         .cs:hover{
             background-color: #c62828;
             color: whitesmoke;
@@ -17,21 +24,15 @@
             width: 100%;
             height: auto;
         }
-        
-        p {
-  			font-size: 1rem;
-  			text-align: left;
-		}
-		h1 {
+        h2 {
   			color: #c62828;
   			font-weight: normal;
   			font-size: 40px;
   			font-family: Arial;
   			text-transform: uppercase;
-}
-        
+			}
     </style>
-    <title>Ingresos</title>
+    <title>Visita</title>
 </head>
 
 <body>
@@ -41,7 +42,7 @@
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -49,58 +50,32 @@
             <li>
                 <div class="divider"></div>
             </li>
-        <li><a class="cs" href="logout">Cerrar Sesion</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
     </ul>
-     	
-
-<a href="crearcapacitacion">crear capacitacion
-</a><br/>
-<a href="listaCapacitacion">lista de capacitaciones
-</a><br/>
-<a href="crearChek">crearChek
-</a><br/>
-<a href="solicitudesPendientes">planificar visita
-</a><br/>
-<a href="solicitudesAgendadas">ingresar asesoria
-</a><br/>
-
-</a><br/>
-
-<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
-</a><br/>
-<br>
-
-<a href="nuevaActividadMejora">Link ingresar actividad de mejora
-</a><br/>
-
-                       
+    						                       
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 M.AutoInit();
             });
-
         </script>
 </body>
 
 </html>
 
+	<form:form action="guardarestadosolicitud" method="post">
+		<div class="row">
+			<div class="col s12 m3">
+				<h2>Crear Estado</h2>
+				
+				
+				<label for="estado" font->Ingrese Estado</label> <br>
+				<form:input type="text" id="estado" name="estado" style="width : 600px; heigth : 3px" path="estado"/> 
+				                       
+				<input type="submit" class="waves-effect waves-light btn"value="guardar" />
+			</div>
+		</div>
+	</form:form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>

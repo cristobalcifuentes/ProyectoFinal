@@ -20,15 +20,13 @@ public class CapacitacionControlador {
 
 	@GetMapping(value = "/crearcapacitacion")
 	public String crearCapacitacion(Model m) {
-		
 		m.addAttribute("command", new Capacitacion());
-		
 		return "CrearCapacitacion";
 
 	}
 
 	@PostMapping(value = "/guardarcapacitacion")
-	public String guardarCapacitacion(Capacitacion c, @RequestParam (value="contenido") String contenido) {
+		public String guardarCapacitacion(Capacitacion c, @RequestParam (value="contenido") String contenido) {
 		
 		System.out.println(contenido);
 		
@@ -36,6 +34,7 @@ public class CapacitacionControlador {
 		c.setContenido(cont);
 		
 		
+
 		System.out.println(c.toString());
 		capacitacion.agregarCapacitacion(c);
 		
@@ -45,9 +44,7 @@ public class CapacitacionControlador {
 
 	@RequestMapping("listaCapacitacion")
 	public String listaCapacitacion(Model m) {
-		
 		m.addAttribute("lista", capacitacion.listarCapacitacion());
-
 		return "ListaCapacitacion";
 	}
 
@@ -61,9 +58,7 @@ public class CapacitacionControlador {
 
 	@RequestMapping("editarCapacitacion/{id}")
 	public String editarCapacitacion(@PathVariable int id, Model m) {
-		
-		
-		
+
 		Capacitacion cp = capacitacion.obtenerCapacitacion(id);
 		System.out.println(cp);
 		m.addAttribute("command", cp);
@@ -72,6 +67,7 @@ public class CapacitacionControlador {
 		return "modificarCapacitacion";
 
 	}
+
 	
 	@RequestMapping("detalleCapacitacion/{id}")
 	public String detalleCapacitacion(@PathVariable int id, Model m) {
@@ -88,6 +84,7 @@ public class CapacitacionControlador {
 	
 	
 	
+
 	@PostMapping(value = "editarCapacitacion/guardarcapacitacion")
 	public String guaedarEdicionCapac(Capacitacion c) {
 		

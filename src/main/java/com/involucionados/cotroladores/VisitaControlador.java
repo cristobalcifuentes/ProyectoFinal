@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.involucionados.modelo.entidades.EstadoSolicitud;
+import com.involucionados.modelo.entidades.Profesional;
 import com.involucionados.modelo.entidades.SolicitudVisita;
 import com.involucionados.modelo.entidades.Visita;
 import com.involucionados.servicio.interfaces.ISolicitudVisitaServicio;
@@ -55,17 +56,26 @@ public class VisitaControlador {
 
 		// obtenemos la solicitud visita por medio de su id
 		SolicitudVisita soli = solicitud.obtenerSolicitud(IdSolicitud);
-
+		
+		
+		Profesional profesional =new Profesional();
+		
+		profesional.setRut(12345678);
+		
 		m.addAttribute("soli", soli);
+		m.addAttribute("profesional", profesional);
 		m.addAttribute("command", new Visita());
 
 		return "AgendarVisita";
 
 	}
-
+	//planificarVisita/RegistrarVisita
+	//planificarVisita/RegistrarVisita/63
 	@PostMapping("planificarVisita/RegistrarVisita/{idSoli}")
 	public String registrarVisita(@PathVariable int idSoli, Visita visita, Model m) {
 
+		
+		System.out.println("esntro al metodo");
 		// obtenemos la solicitud visita por medio de su id
 		SolicitudVisita soli = solicitud.obtenerSolicitud(idSoli);
 
@@ -78,7 +88,14 @@ public class VisitaControlador {
 		// agregamos la solicitud de visita a la visita
 		visita.setSolicitud(soli);
 		System.out.println(visita);
-
+		
+		Profesional profesional = new Profesional();
+		
+		profesional.setRut(12345678);
+		
+		
+		visita.setRutProfesional(profesional);
+		
 		// guardamos la visita
 		visitaSer.agregarVisita(visita);
 

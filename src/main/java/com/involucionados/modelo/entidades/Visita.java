@@ -23,8 +23,9 @@ public class Visita {
 	
 	//modificar cuando este incluida la clase!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//especificar la relacion
-	@Column(name = "RUT_PROFESIONAL")
-	private int rutProfesional;
+	@ManyToOne
+	@JoinColumn(name = "RUT_PROFESIONAL")
+	private Profesional rutProfesional;
 	
 	
 	@Column(name = "FECHA")
@@ -50,14 +51,14 @@ public class Visita {
 	}
 
 
-	public Visita(int rutProfesional, String fecha, SolicitudVisita solicitud) {
+	public Visita(Profesional rutProfesional, String fecha, SolicitudVisita solicitud) {
 		this.rutProfesional = rutProfesional;
 		this.fecha = fecha;
 		this.solicitud = solicitud;
 	}
 
 
-	public Visita(int id, int rutProfesional, String fecha, SolicitudVisita solicitud, Asesoria asesoria) {
+	public Visita(int id, Profesional rutProfesional, String fecha, SolicitudVisita solicitud, Asesoria asesoria) {
 		this.id = id;
 		this.rutProfesional = rutProfesional;
 		this.fecha = fecha;
@@ -76,12 +77,12 @@ public class Visita {
 	}
 
 
-	public int getRutProfesional() {
+	public Profesional getRutProfesional() {
 		return rutProfesional;
 	}
 
 
-	public void setRutProfesional(int rutProfesional) {
+	public void setRutProfesional(Profesional rutProfesional) {
 		this.rutProfesional = rutProfesional;
 	}
 

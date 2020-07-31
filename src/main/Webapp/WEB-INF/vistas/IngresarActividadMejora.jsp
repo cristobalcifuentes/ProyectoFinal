@@ -51,14 +51,11 @@ body {
 		</div>
 		<form:form action="guardarActividadMejora" method="post">
 			<table>
-				<tr>
-					<td>Id de Asesoria: </td>
-					<td><form:input path="idasesoria"/></td>
-				</tr>
-				<tr>
-					<td>Id de Estado de Mejora: </td>
-					<td><form:input path="idestadomejora" /></td>
-				</tr>
+				
+					
+					<form:hidden path="idasesoria"/>
+				
+
 				<tr>
 					<td>Descripción: </td>
 					<td><form:input path="descripcion" /></td>
@@ -75,7 +72,7 @@ body {
 									
 			</table>
 			
-<%-- 		</form:form> --%>
+		</form:form>
 <%-- 		<form action="index"> --%>
 <!--         <table> -->
 <!--     		<tr> -->

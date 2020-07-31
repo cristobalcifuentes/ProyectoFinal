@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.involucionados.modelo.entidades.ActividadMejora;
-
+import com.involucionados.modelo.entidades.Asesoria;
 import com.involucionados.servicio.interfaces.IActividadMejora;
+import com.involucionados.servicio.interfaces.IAsesoriaServicio;
 
 
 
@@ -27,9 +28,20 @@ public class ActividadMejoraControlador {
 	@Autowired
 	IActividadMejora actividadmejora;
 	
-	@GetMapping (value= "/crearActividadMejora")
-	public String crearActividadMejora(Model m) {
-		m.addAttribute("command", new ActividadMejora());
+	@Autowired
+	IAsesoriaServicio asesoriaSer;
+	
+	@GetMapping (value= "revisar/crearActividadMejora/{id}")
+	public String crearActividadMejora(@PathVariable int id, Model m) {
+		
+		
+		Asesoria asesoria = asesoriaSer.obtenerAsesoria(id);
+		
+		
+		ActividadMejora am = new ActividadMejora();
+		am.setIdasesoria(asesoria);
+		
+		m.addAttribute("command", am);
 		return "IngresarActividadMejora";
 	}
 	
