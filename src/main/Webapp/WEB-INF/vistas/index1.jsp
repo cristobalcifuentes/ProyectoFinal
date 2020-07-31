@@ -45,8 +45,10 @@
 </head>
 
 <body>
-	<c:if test="${error != null}">
-		<c:out value="${error}" />
+	<c:if test="${error eq true}">
+		<script type="text/javascript">
+			alert('Error de Login o Password');
+		</script>
     </c:if>
     <div class="row login">
         <div class="col s12 l4 offset-l4">

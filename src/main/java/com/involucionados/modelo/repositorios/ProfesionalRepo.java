@@ -7,5 +7,7 @@ import com.involucionados.modelo.entidades.Profesional;
 
 @Repository
 public interface ProfesionalRepo  extends JpaRepository<Profesional,Integer>{
+	
+	
 
 }

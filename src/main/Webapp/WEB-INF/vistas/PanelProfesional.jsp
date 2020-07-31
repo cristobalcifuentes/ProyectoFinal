@@ -62,7 +62,7 @@
     <div class="container">
     	<div class="row">
 	        <div class="col s12 m10">
-	            <h4 class="header">Ingresar CheckList</h4>
+	            <h4 class="header">Crear Checklist</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
 	                    <img src="imagenes/checklist.jpg">
@@ -74,7 +74,7 @@
 	                        </p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="checklist.jsp">Ir</a>
+	                        <a href="crearChek">Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -92,15 +92,104 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="${pageContext.request.contextPath}/SolicitudesPendientes">PLANIFICAR VISITA</a>
+	                        <a href="solicitudesPendientes">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">Crear Capacitación</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="imagenes/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="crearcapacitacion">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">Listar Capacitación</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="imagenes/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="listaCapacitacion">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">Ingresar Asesoria</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="imagenes/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="solicitudesAgendadas">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">Ingresar Asesoria</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="imagenes/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="solicitudesAgendadas">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">Ingresar Asesoria</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="/images/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="solicitudesAgendadas">IR</a>
 	                    </div>
 	                </div>
 	            </div>
         	</div>
     	</div>
     </div>
-        
-
+       
     <div class="row container">
         <hr>
         <p>Estadisticas del Sistema</p>
