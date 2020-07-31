@@ -16,12 +16,12 @@
 	href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet"
 	href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
-<title>Clientes</title>
+<title>Profesionales</title>
 </head>
 <body>
 	<c:if test="${succes eq true }">
 		<script type="text/javascript">
-			alert("Cliente Modificado Correctamente");
+			alert("Profesional Modificado Correctamente");
 		</script>
 	</c:if>
 	<c:if test="${succesusu eq true }">
@@ -31,7 +31,7 @@
 	</c:if>
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="/Admin">Administrador</a>
+			<a class="navbar-brand" href="#">Administrador</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -39,62 +39,59 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="logout">Cerrar Sesión</a>
+					<a class="nav-item nav-link" href="#">CerrarSession</a>
 				</div>
 			</div>
 		</nav>
 	</div>
-	
-		<div class="container mt-4" id="app">
-			<div class="card ">
-				<div class="card-header bg-dark text-light">
-					<h4>Clientes</h4>
-				</div>
-				<div class="card-body bg-light">
-					<div class="row">
-						<div class="col-sm-12">
-							<table
-								class="table table-striped table-bordered dt-responsive nowrap"
-								style="width: 100%" id="mytable">
-								<thead>
+	<div class="container mt-4">
+		<div class="card ">
+			<div class="card-header bg-dark text-light ">
+				<h4>Profesionales</h4>
+			</div>
+			<div class="card-body bg-light">
+				<div class="row">
+					<div class="col-sm-12">
+						<table
+							class="table table-striped table-bordered dt-responsive nowrap"
+							style="width: 100%" id="mytable">
+							<thead>
+								<tr>
+									<th>Rut</th>
+									<th>Nombre</th>
+									<th>Profesion</th>
+									<th>Email</th>
+									<th>Salud</th>
+									<th>EditPro</th>
+									<th>EditUsu</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${profesionales}" var="profesional">
 									<tr>
-										<th>Rut</th>
-										<th>Nombre</th>
-										<th>Tel</th>
-										<th>Act.Eco</th>
-										<th>Tip.Emp</th>
-										<th>Email</th>
-										<th>EditarUsu</th>
-										<th>EditarCli</th>
+										<td>${profesional.rut}</td>
+										<td>${profesional.usuario.nombre}</td>
+										<td>${profesional.profesion}</td>
+										<td>${profesional.email}</td>
+										<td>${profesional.salud}</td>
+										<td><a
+											href="/Admin/getProfesionales/editpro?rut=${profesional.rut}"
+											class="btn btn-info btn-block">Editar</a></td>
+										<td><a
+											href="/Admin/getClientes/editusu?id=${profesional.usuario.id}"
+											class="btn btn-info btn-block">Editar</a></td>
 									</tr>
-								</thead>
-								<tbody>
-									<c:forEach items="${clientes}" var="cliente">
-										<tr>
-											<td>${cliente.rut}</td>
-											<td>${cliente.usuario.nombre}</td>
-											<td>${cliente.telefono}</td>
-											<td>${cliente.actividadEco}</td>
-											<td>${cliente.tipEmpresa}</td>
-											<td>${cliente.email}</td>
-											<td><a
-												href="/Admin/getClientes/editusu?id=${cliente.usuario.id}"
-												class="btn btn-info btn-block">-></a></td>
-											<td><a
-												href="/Admin/getClientes/editcli?rut=${cliente.rut}"
-												class="btn btn-info btn-block">-></a></td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
+								</c:forEach>
+							</tbody>
+						</table>
 					</div>
 				</div>
-				<div class="card-footer text-muted bg-dark text-light text-right">
+			</div>
+			<div class="card-footer text-muted bg-dark text-light text-right">
                 Mantenedor Sistema Invo ®
               </div>
-			</div>
 		</div>
+	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>

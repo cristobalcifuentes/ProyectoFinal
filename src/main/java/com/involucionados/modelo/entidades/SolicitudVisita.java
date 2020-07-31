@@ -51,10 +51,6 @@ public class SolicitudVisita {
 	@Transient
 	private Visita visitaAsociada;
 	
-	
-	
-
-
 	public Visita getVisitaAsociada() {
 		return visitaAsociada;
 	}

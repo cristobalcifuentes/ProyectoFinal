@@ -38,6 +38,33 @@ public class IDCheklistAsesoria implements Serializable {
 	public void setAsesoria(int asesoria) {
 		this.asesoria = asesoria;
 	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + asesoria;
+		result = prime * result + cheklist;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		IDCheklistAsesoria other = (IDCheklistAsesoria) obj;
+		if (asesoria != other.asesoria)
+			return false;
+		if (cheklist != other.cheklist)
+			return false;
+		return true;
+	}
 	
 	
 	

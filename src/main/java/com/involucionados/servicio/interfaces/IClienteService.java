@@ -4,10 +4,6 @@ import java.util.List;
 
 import com.involucionados.modelo.entidades.Cliente;
 
-
-
-
-
 public interface IClienteService {
 	
 	public Cliente obtenerCliente(String id);
