@@ -81,7 +81,7 @@ h2 {
 				style="width : 600px; heigth : 3px" path="capacitacion" />
 			<br> <br> <br> <br> <br> <label
 				for="contenido"><h4>CAPACITACION</h4></label> <br>
-			<textarea style="width : 1000px; heigthmin : 1000px;" name="contenido" id="contenido"></textarea>
+			<textarea style="width : 1000px; min-height : 1000px;" name="contenido" id="contenido"></textarea>
 
 			<input type="submit" class="waves-effect waves-light btn"
 				value="guardar" />
