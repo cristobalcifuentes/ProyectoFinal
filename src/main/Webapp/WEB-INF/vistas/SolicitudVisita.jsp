@@ -14,7 +14,7 @@
     <title>Lista Estado Solicitud</title>
   </head>
   <body>
-       <!--  <div class="container-fluid">
+       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Profesional</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
                     <thead>
                     
                     
-       aqui ira los datos cargados     para la vista      
+       <!--  aqui ira los datos cargados para la vista    -->  
                         <tr>
                             <th>Cliente</th>
                             <th>Estado solicitud</th>
