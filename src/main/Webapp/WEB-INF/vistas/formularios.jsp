@@ -39,10 +39,9 @@
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
-            <li><a href="index.jsp">Inicio</a></li>
+            <li><a href="/Cliente">Inicio</a></li>
             <li><a href="perfil.jsp">${usuario.nombre}</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+            <li><a class="cs" href="/logout">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -77,7 +76,7 @@
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fugit magni repellat? Dolorum, incidunt atque quos impedit ipsam non delectus commodi natus officiis, ducimus pariatur, aliquam excepturi voluptate obcaecati aut.</p>
                     </div>
                     <div class="card-action">
-                      <a class="btn-floating btn-large cyan pulse" href="formAccidente">Ir</a>
+                      <a class="btn-floating btn-large cyan pulse" href="/Cliente/formularios/formAccidente">Ir</a>
                     </div>
                   </div>
             </div> 
