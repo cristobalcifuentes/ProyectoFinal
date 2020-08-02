@@ -20,20 +20,13 @@
 </head>
 
 <body>
-	<% HttpSession sesion = request.getSession(); 
-	String rol ="";
-    if(sesion.getAttribute("rol") != null){
-    	rol = sesion.getAttribute("rol").toString();
-    }else{
-    	response.sendRedirect("/");
-    }%>
     <nav class="nav-wrapper blue lighten-1">
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
-            <li><a href="perfil.jsp"><%out.print(rol.toUpperCase());%></a></li>
-            <li><a href="formulario">Solicitar Visita</a></li>
-            <li><a class="cs" href="logout">Cerrar Sesion</a></li>
+            <li><a href="perfil.jsp"><c:out value="${usuario.nombre}"></c:out></a></li>
+            <li><a href="Cliente/formularios">Solicitar Visita</a></li>
+            <li><a class="cs" href="/logout">Cerrar Sesion</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -54,28 +47,10 @@
         </li>
         <li><a class="cs" href="logout">Cerrar Sesion</a></li>
     </ul>
-    <c:if test="${mensaje != null}">
-		<c:out value="${mensaje}" />
-    </c:if>
-    <div class="parallax-container">
-        <div class="parallax"><img src="https://fondopotosino.mx/wp-content/uploads/2018/04/quienes_slide_A3_element1b-1.png"></div>
+    <div class="container">
+        
       </div>
-      <div class="section white">
-        <div class="row container">
-          <h2 class="header">Solicitudes de Visitas</h2>
-          <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-        </div>
-      </div>
-      <div class="parallax-container">
-        <div class="parallax"><img src="https://saludlaboralydiscapacidad.org/wp-content/uploads/2018/12/accidentes-en-itinere-banner-saludlaboralydiscapacidad.png"></div>
-      </div>
-      <div class="section white">
-        <div class="row container">
-          <h2 class="header">Reportes De Accidentes</h2>
-          <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-        </div>
-      </div>
-    <!- Compiled and minified JavaScript -->
+    <!-- Compiled and minified JavaScript -->  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {

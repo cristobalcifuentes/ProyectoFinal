@@ -35,7 +35,7 @@ public class Usuario {
 	@Column(name = "APELLIDO", length = 20)
 	private String apellido;
 	
-	@Column(name = "PASSWORD", length = 20)
+	@Column(name = "PASSWORD", length = 200)
 	private String password;
 	
 	@Column(name = "LOGIN", length = 20)

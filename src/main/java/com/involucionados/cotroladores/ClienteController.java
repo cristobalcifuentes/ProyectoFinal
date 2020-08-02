@@ -23,22 +23,22 @@ public class ClienteController {
 	ClienteService cser;
 	
 	@Autowired
-	UsuarioService user;
+	UsuarioService user;	
 	
-	@GetMapping("Admin/getClientes")
+	@GetMapping("/Admin/getClientes")
 	public String obtenerClientes(Model model) {
 		model.addAttribute("clientes",cser.obtenerCliente());
 		return "clientes";
 	}
 	
-	@GetMapping("Admin/getClientes/editcli")
+	@GetMapping("/Admin/getClientes/editcli")
 	public String editcli(@RequestParam String rut,Model model) {
 		Cliente cliente = cser.obtenerCliente(rut);
 		model.addAttribute("cliente",cliente);
 		return "editCli";
 	}
 	
-	@PostMapping("Admin/getClientes/editcli")
+	@PostMapping("/Admin/getClientes/editcli")
 	public String editCliente(@RequestParam Map<String, String> datos,RedirectAttributes attr) {
 		try {
 			String rut = datos.get("rut");
@@ -73,6 +73,16 @@ public class ClienteController {
 		return "redirect:/Admin/getClientes";
 		
 		
+	}
+	
+	@GetMapping("/Cliente")
+	public String inicioCliente() {
+		return "inicio";
+	}
+	
+	@GetMapping("/Cliente/formularios")
+	public String formularios() {
+		return "formularios";
 	}
 	
 

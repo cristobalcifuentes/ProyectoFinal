@@ -66,9 +66,11 @@
 
 </a><br/>
 
-<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
-</a><br/>
-<br>
+<div class="container">
+      <a href="/inicio/Cliente">Acceso Clientes</a>
+      <a href="/Admin">Acceso Administrador</a>
+      <a href="/inicio/Profesional">Acceso Profesionales</a>
+    </div>
 
 <a href="nuevaActividadMejora">Link ingresar actividad de mejora
 </a><br/>
