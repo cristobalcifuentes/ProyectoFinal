@@ -62,7 +62,7 @@
     <div class="container">
     	<div class="row">
 	        <div class="col s12 m10">
-	            <h4 class="header">Crear Checklist</h4>
+	            <h4 class="header">crear capacitacion</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
 	                    <img src="imagenes/checklist.jpg">
@@ -74,7 +74,7 @@
 	                        </p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="crearChek">Ir</a>
+	                        <a href="crearcapacitacion">Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -82,43 +82,7 @@
     	</div>
     	<div class="row">
     		<div class="col s12 m10">
-	            <h4 class="header">Planificar Visita</h4>
-	            <div class="card horizontal hoverable">
-	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
-	                </div>
-	                <div class="card-stacked">
-	                    <div class="card-content">
-	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
-	                    </div>
-	                    <div class="card-action">
-	                        <a href="solicitudesPendientes">IR</a>
-	                    </div>
-	                </div>
-	            </div>
-        	</div>
-    	</div>
-    	<div class="row">
-    		<div class="col s12 m10">
-	            <h4 class="header">Crear Capacitación</h4>
-	            <div class="card horizontal hoverable">
-	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
-	                </div>
-	                <div class="card-stacked">
-	                    <div class="card-content">
-	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
-	                    </div>
-	                    <div class="card-action">
-	                        <a href="crearcapacitacion">IR</a>
-	                    </div>
-	                </div>
-	            </div>
-        	</div>
-    	</div>
-    	<div class="row">
-    		<div class="col s12 m10">
-	            <h4 class="header">Listar Capacitación</h4>
+	            <h4 class="header">lista de capacitaciones</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
 	                    <img src="imagenes/Usuario.jpg">
@@ -136,7 +100,7 @@
     	</div>
     	<div class="row">
     		<div class="col s12 m10">
-	            <h4 class="header">Ingresar Asesoria</h4>
+	            <h4 class="header">crearChek</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
 	                    <img src="imagenes/Usuario.jpg">
@@ -146,7 +110,25 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="solicitudesAgendadas">IR</a>
+	                        <a href="crearChek">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">planificar visita</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="imagenes/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="solicitudesPendientes">IR</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -172,7 +154,25 @@
     	</div>
     	<div class="row">
     		<div class="col s12 m10">
-	            <h4 class="header">Ingresar Asesoria</h4>
+	            <h4 class="header">Listar/Editar Actividad de Mejora</h4>
+	            <div class="card horizontal hoverable">
+	                <div class="card-image">
+	                    <img src="imagenes/Usuario.jpg">
+	                </div>
+	                <div class="card-stacked">
+	                    <div class="card-content">
+	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
+	                    </div>
+	                    <div class="card-action">
+	                        <a href="listaActividadMejora">IR</a>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s12 m10">
+	            <h4 class="header">ingresar actividad de mejora</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
 	                    <img src="/images/Usuario.jpg">
@@ -182,7 +182,7 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="solicitudesAgendadas">IR</a>
+	                        <a href="nuevaActividadMejora">IR</a>
 	                    </div>
 	                </div>
 	            </div>
