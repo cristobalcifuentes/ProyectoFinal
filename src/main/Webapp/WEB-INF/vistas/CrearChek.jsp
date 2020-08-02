@@ -12,7 +12,7 @@
 
 	<h1>crear nuevo cheklist</h1>
 
-	<form:form action="crearChek" method="post">
+	<form:form action="/Profesional/crearChek" method="post">
 
 		<h4>Crear Capacitación</h4>
 				<label for="chek">Ingrese cheklist</label> <br>

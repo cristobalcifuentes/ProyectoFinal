@@ -11,5 +11,12 @@ public class ContraladorInicio {
 	  public String inicio() {
 	  return "index1";
 	  }
+	  
+	  
+	  @GetMapping(value="/Profesional") 
+	  public String inicioProfesional() {
+	  return "PanelProfesional";
+	  }
+	  
 	 
 }

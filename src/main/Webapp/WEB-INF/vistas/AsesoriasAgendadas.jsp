@@ -31,7 +31,7 @@
 			<tr>
 
 				<form:form
-					action="ingresarAsesoria/${sol.getVisitaAsociada().getId()}/${sol.getId()}"
+					action="Profesional/ingresarAsesoria/${sol.getVisitaAsociada().getId()}/${sol.getId()}"
 					method="post">
 
 					<td>${sol.getCliente().getRut() }</td>

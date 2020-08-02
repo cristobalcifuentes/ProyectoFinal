@@ -68,7 +68,7 @@
 	                        </p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="crearcapacitacion">Ir</a>
+	                        <a href="/Profesional/crearcapacitacion">Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -86,7 +86,7 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="listaCapacitacion">IR</a>
+	                        <a href="Profesional/listaCapacitacion">IR</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -104,7 +104,7 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="crearChek">IR</a>
+	                        <a href="/Profesional/crearChek">IR</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -122,7 +122,7 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="solicitudesPendientes">IR</a>
+	                        <a href="/Profesional/solicitudesPendientes">IR</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -140,7 +140,7 @@
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="solicitudesAgendadas">IR</a>
+	                        <a href="/Profesional/solicitudesAgendadas">IR</a>
 	                    </div>
 	                </div>
 	            </div>

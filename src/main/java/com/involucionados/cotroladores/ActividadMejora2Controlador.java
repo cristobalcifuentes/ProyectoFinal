@@ -25,7 +25,7 @@ public class ActividadMejora2Controlador {
 	
 	
 	
-	@GetMapping("nuevaActividadMejora" )
+	@GetMapping("Profesional/nuevaActividadMejora" )
 	public String buscarAsesorias(Model m) {
 		
 		List<Asesoria> asesorias = asesoriaSer.listarAsesoria();
@@ -40,7 +40,7 @@ public class ActividadMejora2Controlador {
 	
 	
 	
-	@GetMapping("revisar/{id}" )
+	@GetMapping("Profesional/revisar/{id}" )
 	public String revisar(@PathVariable int id, Model m) {
 		
 		

@@ -16,10 +16,10 @@
 	de tipo ${soli.getTipo().getTipoVisita() }
 	el dia ${visita.getFecha()} 
 
-<a href="index">VOLVER A INICIO
+<br/><a href="Profesional/">VOLVER A INICIO
 </a><br/>
 
-<a href="solicitudesPendientes">PLANIFICAR OTRA VISITA
+<a href="Profesional/solicitudesPendientes">PLANIFICAR OTRA VISITA
 </a><br/>
 
 

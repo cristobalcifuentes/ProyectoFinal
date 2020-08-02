@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.involucionados.modelo.entidades.ActividadMejora;
 import com.involucionados.modelo.entidades.Asesoria;
@@ -35,7 +33,7 @@ public class ActividadMejoraControlador {
 	
 	
 	
-	@GetMapping (value= "revisar/{id}/crearActividadMejora")
+	@GetMapping (value= "Profesional/revisar/{id}/crearActividadMejora")
 	public String crearActividadMejora(@PathVariable int id, Model m) {
 		
 		
@@ -48,7 +46,8 @@ public class ActividadMejoraControlador {
 		return "IngresarActividadMejora";
 	}
 	
-	@PostMapping(value = "revisar/{ida}/crearActividadMejora/guardarActividadMejora")
+	
+	@PostMapping(value = "Profesional/revisar/{ida}/crearActividadMejora/guardarActividadMejora")
 	public String guardarActividadMejora(@PathVariable int ida, ActividadMejora acme) {
 		
 		
@@ -80,10 +79,10 @@ public class ActividadMejoraControlador {
 		
 		//actividadmejora.eliminarActividadMejora(id);
 		//actividadmejora.agregarActividadMejora(acme);
-		return "redirect:/index";
+		return "redirect:/Profesional/";
 	}
 	
-	@RequestMapping("listaActividadMejora")
+	@RequestMapping("Profesional/listaActividadMejora")
 	public String listaActividadMejora(Model m) {
 		m.addAttribute("lista", actividadmejora.listarActividadMejora());
 		return "ListaActividadMejora";
@@ -100,7 +99,7 @@ public class ActividadMejoraControlador {
 	
  
 	
-	  @RequestMapping("editarActividadMejora/{id}") 
+	  @RequestMapping("Profesional/Profesional/editarActividadMejora/{id}") 
 	  public String editarActividadMejora(@PathVariable int id, Model m){
 	  
 	  ActividadMejora am = actividadmejora.obtenerActividadMejora(id);
@@ -111,7 +110,7 @@ public class ActividadMejoraControlador {
 	 
 	 
 	
-	@PostMapping(value = "/editaractividadmejora")
+	@PostMapping(value = "editaractividadmejora")
 	public String editarActividadMejora(ActividadMejora acme) {
 		
 		
@@ -126,13 +125,13 @@ public class ActividadMejoraControlador {
 		//System.out.println("LLEGO AL METODO");
 		System.out.println(acme);
 		actividadmejora.editarActividadMejora(acme);
-		return "index";
+		return "redirect:/Profesional/";
 	}
 	
 	
 	
 	
-	  @RequestMapping("aprobarActividadMejora/{id}") 
+	  @RequestMapping("Profesional/Profesional/aprobarActividadMejora/{id}") 
 	  public String aprobarActividadMejora(@PathVariable int id, Model m){
 	  
 	 
@@ -143,7 +142,7 @@ public class ActividadMejoraControlador {
 		  
 		  actividadmejora.editarActividadMejora(actividad);
 		  
-	  return "redirect:/listaActividadMejora";
+	  return "redirect:/Profesional/listaActividadMejora";
 	  }
 	
 	

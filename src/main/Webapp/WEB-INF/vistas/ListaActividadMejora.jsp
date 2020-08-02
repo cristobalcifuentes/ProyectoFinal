@@ -39,8 +39,8 @@
 				<td align="center">${list.getIdestadomejora()}</td>
 				<td align="center">${list.getDescripcion()}</td>
 				<%-- <td><a href="eliminarActividadMejora/${list.getId()}">eliminar</a></td> --%>
-				<td align="right"><a href="editarActividadMejora/${list.getId()}">editar</a></td>
-				<td align="right"><a href="aprobarActividadMejora/${list.getId()}">aprobar</a></td>
+				<td align="right"><a href="Profesional/editarActividadMejora/${list.getId()}">editar</a></td>
+				<td align="right"><a href="Profesional/aprobarActividadMejora/${list.getId()}">aprobar</a></td>
 			</tr>
 		</c:forEach>
 </tbody>

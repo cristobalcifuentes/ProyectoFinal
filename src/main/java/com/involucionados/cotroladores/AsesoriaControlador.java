@@ -52,7 +52,7 @@ public class AsesoriaControlador {
 	
 	
 	
-	@GetMapping("solicitudesAgendadas" )
+	@GetMapping("Profesional/solicitudesAgendadas" )
 	public String buscarSolicitudes(Model m) {
 		//System.out.println("entro al metodo");
 		List<SolicitudVisita> solicitudes = solicitudSer.listarSolicitud();
@@ -109,8 +109,8 @@ public class AsesoriaControlador {
 	
 	
 	
-
-	@PostMapping("ingresarAsesoria/{idVisita}/{id}")
+	         //     Profesional/Profesional/ingresarAsesoria/122/67
+	@PostMapping("Profesional/Profesional/ingresarAsesoria/{idVisita}/{id}")
 	public String algo(@PathVariable int idVisita, @PathVariable int id, Model m) {
 
 		//System.out.println("entro al metodo");
@@ -140,7 +140,7 @@ public class AsesoriaControlador {
 	
 	
 	
-	@PostMapping("ingresarAsesoria/{idVisita}/RescatarAsesoria")
+	@PostMapping("Profesional/Profesional/ingresarAsesoria/{idVisita}/RescatarAsesoria")
 	public String rescatarAsesoria(@PathVariable int idVisita, @RequestParam Map<String, String> datos, Model m) {
 		System.out.println("******************** entro al metodo rescatar asesoria ******************** ");
 		
@@ -354,10 +354,9 @@ public class AsesoriaControlador {
 	
 	
 	
-	
-	@GetMapping("ingresarAsesoria/{i}/index")
+	@GetMapping("Profesional/Profesional/ingresarAsesoria/{i}/index")
 	public String volverAInicio(@PathVariable int i ) {
-		return "redirect:/index";
+		return "redirect:/Profesional/";
 	}
 	
 	

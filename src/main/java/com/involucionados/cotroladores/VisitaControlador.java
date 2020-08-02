@@ -26,7 +26,7 @@ public class VisitaControlador {
 	@Autowired
 	IVisitaServicio visitaSer;
 
-	@GetMapping("solicitudesPendientes" )
+	@GetMapping("Profesional/solicitudesPendientes" )
 	public String buscarSolicitudes(Model m) {
 		System.out.println("entro al metodo");
 		List<SolicitudVisita> solicitudes = solicitud.listarSolicitud();
@@ -51,7 +51,7 @@ public class VisitaControlador {
 		return "PlanificarVisita";
 	}
 
-	@PostMapping("planificarVisita/{IdSolicitud}")
+	@PostMapping("Profesional/planificarVisita/{IdSolicitud}")
 	public String agendarVisita(@PathVariable int IdSolicitud, Model m) {
 
 		// obtenemos la solicitud visita por medio de su id
@@ -71,7 +71,7 @@ public class VisitaControlador {
 	}
 	//planificarVisita/RegistrarVisita
 	//planificarVisita/RegistrarVisita/63
-	@PostMapping("planificarVisita/RegistrarVisita/{idSoli}")
+	@PostMapping("Profesional/planificarVisita/RegistrarVisita/{idSoli}")
 	public String registrarVisita(@PathVariable int idSoli, Visita visita, Model m) {
 
 		
@@ -108,14 +108,14 @@ public class VisitaControlador {
 		return "ConfirmacionVisita";
 	}
 
-	@GetMapping("planificarVisita/RegistrarVisita/solicitudesPendientes")
+	@GetMapping("Profesional/planificarVisita/RegistrarVisita/Profesional/solicitudesPendientes")
 	public String redireccion1() {
-		return "redirect:/solicitudesPendientes";
+		return "redirect:/Profesional/solicitudesPendientes";
 	}
 
-	@GetMapping("planificarVisita/RegistrarVisita/index")
+	@GetMapping("Profesional/planificarVisita/RegistrarVisita/Profesional/")
 	public String redireccion2() {
-		return "redirect:/index";
+		return "redirect:/Profesional";
 	}
 
 }

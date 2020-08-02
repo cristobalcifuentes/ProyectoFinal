@@ -18,14 +18,14 @@ public class CapacitacionControlador {
 	@Autowired
 	ICapacitacionServicio capacitacion;
 
-	@GetMapping(value = "/crearcapacitacion")
+	@GetMapping(value = "/Profesional/crearcapacitacion")
 	public String crearCapacitacion(Model m) {
 		m.addAttribute("command", new Capacitacion());
 		return "CrearCapacitacion";
 
 	}
 
-	@PostMapping(value = "/guardarcapacitacion")
+	@PostMapping(value = "/Profesional/guardarcapacitacion")
 		public String guardarCapacitacion(Capacitacion c, @RequestParam (value="contenido") String contenido) {
 		
 		System.out.println(contenido);
@@ -38,25 +38,25 @@ public class CapacitacionControlador {
 		System.out.println(c.toString());
 		capacitacion.agregarCapacitacion(c);
 		
-		return "index";
+		return "redirect:/Profesional";
 
 	}
 
-	@RequestMapping("listaCapacitacion")
+	@RequestMapping("Profesional/listaCapacitacion")
 	public String listaCapacitacion(Model m) {
 		m.addAttribute("lista", capacitacion.listarCapacitacion());
 		return "ListaCapacitacion";
 	}
 
-	@RequestMapping("elimnarCapacitacion/{id}")
+	@RequestMapping("Profesional/elimnarCapacitacion/{id}")
 	public String eliminarCapacitacion(@PathVariable int id) {
 		
 		capacitacion.eliminarCapacitacion(id);
 		
-		return "redirect:/listaCapacitacion";
+		return "redirect:/Profesional/listaCapacitacion";
 	}
 
-	@RequestMapping("editarCapacitacion/{id}")
+	@RequestMapping("Profesional/editarCapacitacion/{id}")
 	public String editarCapacitacion(@PathVariable int id, Model m) {
 
 		Capacitacion cp = capacitacion.obtenerCapacitacion(id);
@@ -68,8 +68,7 @@ public class CapacitacionControlador {
 
 	}
 
-	
-	@RequestMapping("detalleCapacitacion/{id}")
+	@RequestMapping("Profesional/detalleCapacitacion/{id}")
 	public String detalleCapacitacion(@PathVariable int id, Model m) {
 		
 		
@@ -85,14 +84,14 @@ public class CapacitacionControlador {
 	
 	
 
-	@PostMapping(value = "editarCapacitacion/guardarcapacitacion")
+	@PostMapping(value = "Profesional/editarCapacitacion/guardarcapacitacion")
 	public String guaedarEdicionCapac(Capacitacion c) {
 		
 		System.out.println("llego al controlador");
 		System.out.println(c.toString());
 		capacitacion.agregarCapacitacion(c);
 		
-		return "redirect:/index";
+		return "redirect:/Profesional";
 
 	}
 	

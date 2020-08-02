@@ -15,7 +15,7 @@ public class CheklistControlador {
 	@Autowired
 	ICheklistServicio chek;
 	
-	@GetMapping("crearChek")
+	@GetMapping("Profesional/crearChek")
 	public String mostrarFormulario(Model m) {
 		
 		m.addAttribute("command", new Cheklist());
@@ -24,12 +24,12 @@ public class CheklistControlador {
 	}
 	
 	
-	@PostMapping("crearChek")
+	@PostMapping("Profesional/crearChek")
 	public String guardarChek(Model m, Cheklist c) {
 		
 		System.out.println(c);
 		chek.agregarCheklist(c);
-		return "index";
+		return "redirect:/Profesional";
 	}
 	
 	
