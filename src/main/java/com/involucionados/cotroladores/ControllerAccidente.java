@@ -35,26 +35,23 @@ public class ControllerAccidente {
 	@Autowired
 	TrabajadorService traS;
 
-	@GetMapping("/formulario")
-	public String formularios() {
-		return "formularios";
-	}
 
-	@RequestMapping("/formAccidente")
+	@RequestMapping("/Cliente/formularios/formAccidente")
 	public String comprobarDeuda(HttpSession sesion,RedirectAttributes attr) {
 		String res = "";
 		Cliente c = (Cliente) sesion.getAttribute("cliente");
+		System.out.println(c.getComuna());
 		String deuda = pService.comprobarDeuda(c.getRut());
 		if (deuda.equalsIgnoreCase("deuda")) {
 			attr.addFlashAttribute("deuda",true);
-			res = "redirect:/formulario";
+			res = "redirect:/Cliente/formularios";
 		} else {
 			res = "formAccidente";
 		}
 		return res;
 	}
 
-	@PostMapping("/accidente")
+	@PostMapping("/Cliente/formularios/formAccidente")
 	public String saveAccident(@RequestParam Map<String, String> todos,RedirectAttributes attr) {
 
 		int serie = Integer.parseInt(todos.get("txtserie"));
@@ -66,7 +63,6 @@ public class ControllerAccidente {
 		int telTra = Integer.parseInt(todos.get("txtteltra"));
 		String sexTra = todos.get("sexo");
 		
-		 
 		 
 		 ReporteAccidente r = new ReporteAccidente();
 		 r.setId(serie);

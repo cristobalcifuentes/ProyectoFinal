@@ -9,24 +9,29 @@
 <body>
 inicio
 
-<br>
+<!-- <br> -->
 
-<a href="crearcapacitacion">crear capacitacion
-</a><br/>
-<a href="listaCapacitacion">lista de capacitaciones
-</a><br/>
-<a href="crearChek">crearChek
-</a><br/>
-<a href="solicitudesPendientes">planificar visita
-</a><br/>
-<a href="solicitudesAgendadas">ingresar asesoria
-</a><br/>
-<a href="crearActividadMejora">Ingresar Actividad Mejora
-</a><br/>
+<!-- <a href="crearcapacitacion">crear capacitacion -->
+<!-- </a><br/> -->
+<!-- <a href="listaCapacitacion">lista de capacitaciones -->
+<!-- </a><br/> -->
+<!-- <a href="crearChek">crearChek -->
+<!-- </a><br/> -->
+<!-- <a href="solicitudesPendientes">planificar visita -->
+<!-- </a><br/> -->
+<!-- <a href="solicitudesAgendadas">ingresar asesoria -->
+<!-- </a><br/> -->
+<!-- <a href="crearActividadMejora">Ingresar Actividad Mejora -->
+<!-- </a><br/> -->
+<!-- <a href="listaActividadMejora">Listar/Editar Actividad de Mejora -->
+<!-- </a><br/> -->
+<!-- <br> -->
 
-<a href="listaActividadMejora">Listar/Editar Actividad de Mejora
-</a><br/>
-<br>
+<div class="container">
+      <a href="/inicio/Cliente">Acceso Clientes</a>
+      <a href="/Admin">Acceso Administrador</a>
+      <a href="/inicio/Profesional">Acceso Profesionales</a>
+    </div>
 
 
 </body>

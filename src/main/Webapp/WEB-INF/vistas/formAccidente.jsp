@@ -25,20 +25,12 @@
 </head>
 
 <body>
-   <% HttpSession sesion = request.getSession(); 
-	String rol ="";
-    if(sesion.getAttribute("rol") != null){
-    	rol = sesion.getAttribute("rol").toString();
-    }else{
-    	response.sendRedirect("login.jsp");
-    }%>
     <nav class="nav-wrapper blue lighten-1">
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
-            <li><a href="perfil.jsp"><%out.print(rol.toUpperCase());%></a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="perfil.jsp"><c:out value="${usuario.nombre}"></c:out></a></li>
             <li><a class="cs" href="logout">Cerrar Sesión</a></li>
         </ul>
     </nav>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,20 +25,13 @@
 </head>
 
 <body>
-<% HttpSession sesion = request.getSession(); 
-	String rol ="";
-    if(sesion.getAttribute("rol") != null && sesion.getAttribute("rol").toString().equalsIgnoreCase("profesional")){
-    	rol = sesion.getAttribute("rol").toString();
-    }else{
-    	response.sendRedirect("/");
-    }%>
     <nav class="nav-wrapper blue lighten-1">
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
-        	<li><%out.print(rol.toUpperCase());%></li>
-            <li><a  href="index.html">Inicio</a></li>
-            <li><a class="cs" href="login.html">Cerrar Sesión</a></li>
+        	<li><c:out value="${usuario.nombre }"></c:out></li>
+            <li><a  href="/Profesional">Inicio</a></li>
+            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -47,8 +41,8 @@
                     <img src="https://picsum.photos/300/300?random=1">
                 </div>
                 <a href="#user"><img class="circle" src="https://picsum.photos/200/300?random=2"></a>
-                <a href="perfil.jsp"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                <a href="#"><span class="white-text name"><c:out value="${usuario.nombre}"></c:out></span></a>
+                <a href="#email"><span class="white-text email"></span></a>
             </div>
         </li>
         <li><a href="perfil.jsp">Perfil</a></li>

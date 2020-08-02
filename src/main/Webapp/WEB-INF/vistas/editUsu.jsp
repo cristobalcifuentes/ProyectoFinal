@@ -28,7 +28,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="/logout">CerrarSession</a>
+					<a class="nav-item nav-link" href="/logout">Cerrar Sesion</a>
 				</div>
 			</div>
 		</nav>

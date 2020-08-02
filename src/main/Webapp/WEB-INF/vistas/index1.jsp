@@ -56,7 +56,7 @@
                 <div class="card-action blue white-text">
                     <h3>Login</h3>
                 </div>
-                <form action="inicio" method="POST" name="formlogin">
+                <form action="login" method="post" >
                     <div class="card-content">
                         <div class="form-field">
                             <input id="usuario" name="usuario" type="text" class="validate">
@@ -75,7 +75,7 @@
                             </p>
                         </div><br>
                         <div class="form-field: center-align">
-                            <button class="waves-effect waves-light btn-large blue" type="submit">Ingresar</button>
+                            <button class="waves-effect waves-light btn-large blue" name="submit" type="submit" value="submit" >Ingresar</button>
                         </div><br>
                     </div>
                 </form>

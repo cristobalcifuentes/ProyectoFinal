@@ -12,9 +12,7 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-	crossorigin="anonymous">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <title>Panel Administrador</title>
 </head>
 
@@ -29,7 +27,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="#">CerrarSession</a>
+					<a class="nav-item nav-link" href="logout">CerrarSession</a>
 				</div>
 			</div>
 		</nav>
@@ -45,7 +43,7 @@
 							<p class="card-text">This is a wider card with supporting
 								text below as a natural lead-in to additional content. This
 								content is a little bit longer.</p>
-							<a href="Admin/getClientes" class="btn btn-info">Ingresar</a>
+							<a href="/Admin/getClientes" class="btn btn-info">Ingresar</a>
 						</div>
 					</div>
 				</div>
@@ -57,7 +55,7 @@
 							<p class="card-text">This is a wider card with supporting
 								text below as a natural lead-in to additional content. This
 								content is a little bit longer.</p>
-							<a href="Admin/getProfesionales" class="btn btn-info">Ingresar</a>
+							<a href="/Admin/getProfesionales" class="btn btn-info">Ingresar</a>
 						</div>
 					</div>
 				</div>
@@ -103,21 +101,15 @@
 				</div>
 			</div>
 		</div>
-
+</div>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-			crossorigin="anonymous"></script>
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-			integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-			crossorigin="anonymous"></script>
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 		<script>
 			$(document).ready(function() {
 				$('#mytable').DataTable();
