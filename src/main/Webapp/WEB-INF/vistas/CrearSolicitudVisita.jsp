@@ -15,13 +15,12 @@
 
 	<form:form action="guardarsolicitud" method="post">
 
-		<form:radiobutton path="tipo" value="${cap}" /> <br/> Capacitación
-		<form:radiobutton path="tipo" value="${ase}"/> <br/> Asesoria
-		<form:radiobutton path="tipo" value="${asee}" /> <br/> Asesoria Especial
-		<form:input name="tipo" path="tipo" />
+		<form:radiobutton path="tipo" value="${cap}" /> Capacitación <br/>
+		<form:radiobutton path="tipo" value="${ase}"/>  Asesoria <br/>
+		<form:radiobutton path="tipo" value="${asee}" /> Asesoria Especial <br/>
+		
 
-
-		<input type="submit" value="guardar" />
+		<input type="submit" value="Solicitar" />
 
 	</form:form>
 </body>
