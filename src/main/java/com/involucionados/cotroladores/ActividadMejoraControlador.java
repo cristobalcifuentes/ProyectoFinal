@@ -29,26 +29,56 @@ public class ActividadMejoraControlador {
 	@Autowired
 	IAsesoriaServicio asesoriaSer;
 	
-	@GetMapping (value= "revisar/crearActividadMejora/{id}")
+	
+	
+	
+	
+	@GetMapping (value= "revisar/{id}/crearActividadMejora")
 	public String crearActividadMejora(@PathVariable int id, Model m) {
 		
 		
-		Asesoria asesoria = asesoriaSer.obtenerAsesoria(id);
 		
 		
 		ActividadMejora am = new ActividadMejora();
-		am.setIdasesoria(asesoria);
 		
+		System.out.println(am);
 		m.addAttribute("command", am);
 		return "IngresarActividadMejora";
 	}
 	
-	@PostMapping(value = "/guardarActividadMejora")
-	public String guardarActividadMejora(ActividadMejora acme) {
-		System.out.println( "Pase por acá");
+	@PostMapping(value = "revisar/{ida}/crearActividadMejora/guardarActividadMejora")
+	public String guardarActividadMejora(@PathVariable int ida, ActividadMejora acme) {
+		
+		
+		System.out.println(acme);
+		
+		ActividadMejora actividad = acme;
+		
+		
+		Asesoria asesoria = asesoriaSer.obtenerAsesoria(ida);
+		System.out.println(asesoria);
+		
+		actividad.setIdasesoria(asesoria);
+		
+		System.out.println(actividad);
+		
+//		nos falta agregar el id del estado de moera a la actividad de mejora
+		
+		actividad.setIdestadomejora(1);
+		
+		System.out.println("actividad de mejora previo a guardar: " + actividad);
+		
+		
+		actividadmejora.agregarActividadMejora(actividad);
+		
+		
+		
+		
+		
+		
 		//actividadmejora.eliminarActividadMejora(id);
-		actividadmejora.agregarActividadMejora(acme);
-		return "index";
+		//actividadmejora.agregarActividadMejora(acme);
+		return "redirect:/index";
 	}
 	
 	@RequestMapping("listaActividadMejora")
@@ -72,7 +102,7 @@ public class ActividadMejoraControlador {
 	  public String editarActividadMejora(@PathVariable int id, Model m){
 	  
 	  ActividadMejora am = actividadmejora.obtenerActividadMejora(id);
-	  System.out.println(am);
+	 // System.out.println(am);
 	  m.addAttribute("command", am);
 	  return "EditarActividadMejora";
 	  }
@@ -81,11 +111,38 @@ public class ActividadMejoraControlador {
 	
 	@PostMapping(value = "/editaractividadmejora")
 	public String editarActividadMejora(ActividadMejora acme) {
+		
+		
+		
+		ActividadMejora actividadprovisoria = actividadmejora.obtenerActividadMejora(acme.getId());
+		
+		acme.setIdasesoria(actividadprovisoria.getIdasesoria());
+		
+		
+		
+		
+		//System.out.println("LLEGO AL METODO");
 		System.out.println(acme);
 		actividadmejora.editarActividadMejora(acme);
 		return "index";
 	}
 	
+	
+	
+	
+	  @RequestMapping("aprobarActividadMejora/{id}") 
+	  public String aprobarActividadMejora(@PathVariable int id, Model m){
+	  
+	 
+		  ActividadMejora actividad = actividadmejora.obtenerActividadMejora(id);
+		  
+		  actividad.setIdestadomejora(2);
+		  
+		  
+		  actividadmejora.editarActividadMejora(actividad);
+		  
+	  return "redirect:/listaActividadMejora";
+	  }
 	
 	
 	

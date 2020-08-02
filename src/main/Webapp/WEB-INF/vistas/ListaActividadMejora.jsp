@@ -27,18 +27,20 @@
 			<th>idestadomejora</th>
 			<th>descripcion</th>
 			<th>Edición</th>
+			<th>aprobar</th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach items="${lista}" var="list">
 	
 			<tr>
-				<td align="right">${list.getIdasesoria()}</td>
+				<td align="right">${list.getIdasesoria().getId()}</td>
 				<td align="right">${list.getId()}</td>
 				<td align="center">${list.getIdestadomejora()}</td>
 				<td align="center">${list.getDescripcion()}</td>
 				<%-- <td><a href="eliminarActividadMejora/${list.getId()}">eliminar</a></td> --%>
 				<td align="right"><a href="editarActividadMejora/${list.getId()}">editar</a></td>
+				<td align="right"><a href="aprobarActividadMejora/${list.getId()}">aprobar</a></td>
 			</tr>
 		</c:forEach>
 </tbody>

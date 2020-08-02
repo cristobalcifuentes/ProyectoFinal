@@ -54,8 +54,8 @@ body {
 		<form:hidden path="id"/>
 		<table>
 		<tr>
-					<td>Id de Asesoria: </td>
-					<td><form:input path="idasesoria" type="text"/></td>
+<!-- 					<td>Id de Asesoria: </td> -->
+<%-- 					<td><form:hidden path="idasesoria"/></td> --%>
 				
 				<tr>
 					<td>Id de Estado de Mejora: </td>

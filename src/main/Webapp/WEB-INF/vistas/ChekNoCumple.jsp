@@ -24,7 +24,7 @@
 			<tr>
 				<td>${l.getCheklist().getChek()}</td>
 	
-				<td><a href="crearActividadMejora/${l.getAsesoria().getId()}">agregar mejora </a></td>
+				<td><a href="${l.getAsesoria().getId()}/crearActividadMejora/">agregar mejora </a></td>
 			<tr>
 		</c:forEach>
 

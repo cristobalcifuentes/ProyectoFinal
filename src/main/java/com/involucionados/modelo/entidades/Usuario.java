@@ -44,6 +44,12 @@ public class Usuario {
 	@OneToOne(mappedBy="usuario")
 	private Cliente cliente;
 	
+	@OneToOne(mappedBy="usuario")
+	private Profesional profesional;
+	
+	@OneToOne(mappedBy="usuario")
+	private Administrador administrador;
+	
 	public Usuario() {
 		super();
 	}
@@ -111,6 +117,22 @@ public class Usuario {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public Profesional getProfesional() {
+		return profesional;
+	}
+
+	public void setProfesional(Profesional profesional) {
+		this.profesional = profesional;
+	}
+
+	public Administrador getAdministrador() {
+		return administrador;
+	}
+
+	public void setAdministrador(Administrador administrador) {
+		this.administrador = administrador;
 	}
 
 	

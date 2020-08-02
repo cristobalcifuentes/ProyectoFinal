@@ -21,7 +21,7 @@ estamos agendando una visita al cliente "${soli.getCliente().getRazonsocial()}",
 
 		
 		
-		<form:hidden value="${12345678}"  path="rutProfesional"/>
+<%-- 		<form:hidden value="${profesional}"  path="rutProfesional"/> --%>
 		<br>
 		
 		

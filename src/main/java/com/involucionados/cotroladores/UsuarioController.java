@@ -14,50 +14,87 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.involucionados.modelo.entidades.Administrador;
 import com.involucionados.modelo.entidades.Cliente;
+import com.involucionados.modelo.entidades.Profesional;
 import com.involucionados.modelo.entidades.Usuario;
 import com.involucionados.servicio.implementaciones.ClienteService;
+import com.involucionados.servicio.implementaciones.ProfesionalService;
 import com.involucionados.servicio.implementaciones.RolService;
 import com.involucionados.servicio.implementaciones.UsuarioService;
 
-
-
+/**
+ * @author Gerald
+ *
+ */
 @Controller
 public class UsuarioController {
 
+	/** 
+	 * instancias de Servicio
+	 * */
 	@Autowired
 	UsuarioService user;
-
+	
 	@Autowired
 	ClienteService cli;
+	
 	@Autowired
 	RolService rols;
 
-	/*
-	 * @RequestMapping("/") public String getIndex() { return "index"; }
-	 */
-
+	
+	/** 
+	 * Mapping login 
+	 * */
 	@PostMapping("/inicio")
 	public String comprobarLogin(@RequestParam("usuario") String usu, @RequestParam("contrasena") String con,
-			HttpSession sesion ,Model model) {
+			HttpSession sesion ,Model model ,RedirectAttributes attr) {
 		Usuario u = new Usuario();
 		Cliente c = new Cliente();
+		Profesional p = new Profesional();
+		Administrador a = new Administrador();
 		String res = "";
 		u = user.ComprobarLogin(usu, con);
-		if (u != null) {
-			sesion.setAttribute("rol", u.getRol().getRol());
-			sesion.setAttribute("usuario", u);
-			c = u.getCliente();
-			sesion.setAttribute("cliente", c);
-			res = "inicio";
-		} else {
-			model.addAttribute("error","Datos Incorrectos");
-			res = "redirect:/";
+		
+		
+		if(u!= null) {
+			
+			String rol = u.getRol().getRol();
+			
+			if(rol.equalsIgnoreCase("cliente")) {
+				
+				sesion.setAttribute("rol",rol);
+				sesion.setAttribute("usuario", u);
+				c = u.getCliente();
+				sesion.setAttribute("cliente", c);
+				res = "inicio";
+				
+			}else if(rol.equalsIgnoreCase("profesional")) {
+				
+				sesion.setAttribute("rol",rol);
+				p = u.getProfesional();
+				sesion.setAttribute("profesional",p);
+				res="PanelProfesional";
+				
+			}else if(rol.equalsIgnoreCase("administrador")) {
+				sesion.setAttribute("rol",rol);
+				a = u.getAdministrador();
+				sesion.setAttribute("administrador",a);
+				res="admin";
+			}
+			
+		}else{
+			attr.addFlashAttribute("error",true);
+			res="redirect:/index1";
 		}
+		
 		return res;
 	}
 	
-	@GetMapping("/Admin/getClientes/editusu")
+	/** 
+	 * Mapping para obtener usuario a editar
+	 * */
+	@GetMapping("Admin/getClientes/editusu")
 	public String obtenerUsuario(@RequestParam Integer id, Model model) {
 		Usuario usuario = user.obtenerUsuario(id);
 		model.addAttribute("usuario",usuario);
@@ -65,6 +102,10 @@ public class UsuarioController {
 		
 	}
 	
+	/** 
+	 * Mapping para rescatar datos de usuario a editar,
+	 * ademas de finalmente construir y editar usuario espedifico
+	 * */
 	@PostMapping("Admin/getClientes/editusu")
 	public String editUsuario(@RequestParam Map<String, String> datos,RedirectAttributes attr) {
 		try {

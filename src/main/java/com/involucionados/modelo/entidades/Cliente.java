@@ -1,6 +1,5 @@
 package com.involucionados.modelo.entidades;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -58,10 +57,10 @@ public class Cliente {
 	  
 	//bi-direccion many-to-one asociado a to SolicitudVisita
 	  
-	/*
-	 * @OneToMany(mappedBy="cliente") private List<SolicitudVisita>
-	 * solicitudVisitas;
-	 */
+	
+	 @OneToMany(mappedBy="cliente") private List<SolicitudVisita>
+	 solicitudVisitas;
+	 
 	 
 
 	public Cliente() {
@@ -170,14 +169,13 @@ public class Cliente {
 	  this.reporteAccidentes = reporteAccidentes; }
 
 	  
-	/*
-	 * public List<SolicitudVisita> getSolicitudVisitas() { return solicitudVisitas;
-	 * }
-	 * 
-	 * public void setSolicitudVisitas(List<SolicitudVisita> solicitudVisitas) {
-	 * this.solicitudVisitas = solicitudVisitas; }
-	 */
-
+	
+	  public List<SolicitudVisita> getSolicitudVisitas() { return solicitudVisitas;
+	  }
+	  
+	  public void setSolicitudVisitas(List<SolicitudVisita> solicitudVisitas) {
+	  this.solicitudVisitas = solicitudVisitas; }
+	 
 	
 	
 	
