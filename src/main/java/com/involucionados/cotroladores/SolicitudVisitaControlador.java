@@ -1,12 +1,13 @@
 package com.involucionados.cotroladores;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.involucionados.modelo.entidades.Cliente;
 import com.involucionados.modelo.entidades.EstadoSolicitud;
@@ -35,13 +36,15 @@ public class SolicitudVisitaControlador {
 	
 	
 		@RequestMapping("Cliente/solicitudvisita")
-		public String crearSolicitudVisita(Model m) {
+		public String crearSolicitudVisita(Model m ) {
 		System.out.println("prueba");
 		
 		TipoVisita capacitacion = TipoVisitaSer.obtenerTipoVisita(1);
 		TipoVisita asesoria = TipoVisitaSer.obtenerTipoVisita(2);
 		TipoVisita asesoriae = TipoVisitaSer.obtenerTipoVisita(3);
 		
+		
+	
 		m.addAttribute("cap", capacitacion);
 		m.addAttribute("ase", asesoria);
 		m.addAttribute("asee", asesoriae);
@@ -61,7 +64,10 @@ public class SolicitudVisitaControlador {
 	}
 	
 	@PostMapping("Cliente/guardarsolicitud")
-	public String guardarsolicitud(SolicitudVisita vis, Model m ) {
+	public String guardarsolicitud(SolicitudVisita vis, Model m , HttpSession sesion, RedirectAttributes attr) {
+		
+		
+		
 		
 		
 		System.out.println("objeto SolicitudVisita que llega desde el formulario: " + vis);
@@ -79,15 +85,17 @@ public class SolicitudVisitaControlador {
 		
 
 		//creamos un objeto de tipo cliente
-		Cliente cliente = clienteSer.obtenerCliente("123456");
-		
+		Cliente c = new Cliente();
+		c= (Cliente) sesion.getAttribute("cliente");
 		//agregamos el objeto cliente como atributo al objeto SolicituVisita
-		solicitud.setCliente(cliente);
+		solicitud.setCliente(c);
 		System.out.println("objeto solicitudvista despues de agregar al cliente: " + solicitud);
 		
 		
 		
+		SolicitudVisitaSer.agregarSolicitud(solicitud);
 		
+		attr.addFlashAttribute("confirmacion",true);
 		return "redirect:/Cliente";
 	
 		
