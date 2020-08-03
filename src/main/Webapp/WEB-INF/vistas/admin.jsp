@@ -69,39 +69,52 @@
 							<p class="card-text">This is a wider card with supporting
 								text below as a natural lead-in to additional content. This
 								content is a little bit longer.</p>
-							<a href="" class="btn btn-info">Ingresar</a>
+							<a href="Admin/Globales" class="btn btn-info">Ingresar</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12">
-					<div class="card mb-3">
-						<img src="images/Background-2.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Estadisticas Accidentabilidad</h5>
-							<p class="card-text">This is a wider card with supporting
-								text below as a natural lead-in to additional content. This
-								content is a little bit longer.</p>
-							<a href="" class="btn btn-info">Ingresar</a>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card mb-3">
+							<img src="images/Background-2.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Reportes cliente</h5>
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<a href="Admin/Cliente" class="btn btn-info">Ingresar</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="card mb-3">
+							<img src="images/Background-2.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Estadisticas Accidentabilidad</h5>
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<a href="" class="btn btn-info">Ingresar</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="card mb-3">
-						<img src="images/Background-2.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Notificar Deudas</h5>
-							<p class="card-text">This is a wider card with supporting
-								text below as a natural lead-in to additional content. This
-								content is a little bit longer.</p>
-							<a href="Admin/Notificaciones" class="btn btn-info">Ingresar</a>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card mb-3">
+							<img src="images/Background-2.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Notificar Deudas</h5>
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<a href="Admin/Notificaciones" class="btn btn-info">Ingresar</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-</div>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

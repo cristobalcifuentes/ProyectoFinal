@@ -20,7 +20,6 @@ public class CapacitacionServicio implements ICapacitacionServicio {
 	@Autowired 
 	EntityManager em;
 	
-	
 	@Override
 	public Capacitacion obtenerCapacitacion(int id) {
 		
