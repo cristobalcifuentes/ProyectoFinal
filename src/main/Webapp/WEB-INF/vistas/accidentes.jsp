@@ -13,7 +13,11 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<title>Reporte Clientes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<title>Accidentabilidad</title>
 </head>
 
 <body>
@@ -32,25 +36,21 @@
 			</div>
 		</nav>
 	</div>
-	<div class="container">
-		<h1 class="mt-4">Reporte de Clientes</h1>
-		<table class="table table-dark">
-			<thead>
-				<tr>
-					<th>Razon Social</th>
-					<th>Rut</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${clientes}" var="c">
-					<tr>
-
-						<td>${c.getRazonsocial()}</td>
-						<td><a href="/Admin/reporte/${c.getRut()}">reporte</a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+	<div class="container" id="app">
+		<h2>Estadisticas De Accidentabilidad</h2>
+		<div class="col-sm-12 col-md-6">
+			<canvas id="accidentes" width="200" height="200"></canvas>
+		</div>
 	</div>
+	<script src="/js/accidentes.js"></script>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
 </body>
+
 </html>

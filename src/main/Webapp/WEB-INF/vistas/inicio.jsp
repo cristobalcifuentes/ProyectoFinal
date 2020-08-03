@@ -54,7 +54,23 @@
     </ul>
     
     <div class="container">
-        
+        <div class="row">
+            <div class="col sm-12 md-8 lg-12">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="/images/Notificaciones.png">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">Notificaciones<i class="material-icons right">more_vert</i></span>
+                      <p><a href="#">IR</a></p>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">Notificaciones<i class="material-icons right">close</i></span>
+                      <p>Usted no posee Ningun tipo de Notificaciones, Que tenga una Buena Experiencia</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
       </div>
     <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

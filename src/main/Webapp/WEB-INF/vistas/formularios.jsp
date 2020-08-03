@@ -39,9 +39,9 @@
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
+        	<li>${usuario.nombre}</li>
             <li><a href="/Cliente">Inicio</a></li>
-            <li><a href="perfil.jsp">${usuario.nombre}</a></li>
-            <li><a class="cs" href="/logout">Cerrar Sesi�n</a></li>
+            <li><a class="cs" href="/logout">Cerrar Sesion</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -55,13 +55,12 @@
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="index.jsp">Inicio</a></li>
-        <li><a href="perfil.jsp">Perfil</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li>${usuario.nombre}</li>
+        <li><a href="/Cliente">Inicio</a></li>
         <li>
             <div class="divider"></div>
         </li>
-        <li><a class="cs" href="logout">Cerrar Sesi�n</a></li>
+        <li><a class="cs" href="/logout">Cerrar Sesion</a></li>
     </ul>
 
     <div class="container">

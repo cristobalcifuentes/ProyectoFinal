@@ -22,7 +22,7 @@ public class SolicitudVisita {
 	
 	@Id
 	@Column(name="ID")
-	@GeneratedValue(generator = "autoincrementSolicitudolicitud")
+	@GeneratedValue(generator = "autoincrementSolicitud")
 	@SequenceGenerator(name = "autoincrementSolicitud", sequenceName = "SEC_SOL_VISITA", allocationSize = 1)
 	private int id;
 	

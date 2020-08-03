@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col s12 m6">
                     <h2 class="center-align">Crear Capacitacion</h2>
-                    <h4>TUTILO CAPACITACION</h4>
+                    <h4>Titulo De  Capacitación</h4>
                    <br>
                     <form:input type="text" id="capacitacion" name="capacitacion" 
                         path="capacitacion" />

@@ -24,8 +24,7 @@ public class ReporteAccService implements IReporteAccidenteService{
 
 	@Override
 	public List<ReporteAccidente> listarAccidentes() {
-		
-		return repo.findAll();
+		return this.repo.findAll();
 	}
 
 }

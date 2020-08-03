@@ -81,7 +81,7 @@ public class ControllerAdmin {
 		String correo = c.getEmail();
 		String asunto ="Deudas Sistema";
 		String mensaje="Sr(a): "+u.getNombre()+"\s"+u.getApellido()+", "
-				+ "Quisiera Avisarle que usted posee deudas , ante"
+				+ "Quisiera Avisarle que usted posee deudas , ante "
 				+ "esta situacion, no podra solicitar mas visitas ni reportes,"
 				+ "ruego poner fin a esta situacion cancelando lo mas pronto"
 				+ "posible."
@@ -115,7 +115,7 @@ public class ControllerAdmin {
 		
 		int solicitudesAsesoriasE = 0;
 		
-		
+			System.out.println("Cantidad de Solicitudes" +solicitudes.indexOf(0));
 		for(SolicitudVisita s: solicitudes) {
 			
 			cantidadSolicitudes ++;
@@ -130,20 +130,11 @@ public class ControllerAdmin {
 			
 		}
 		
-		
-		
-		
-		
-		
-		
 		m.addAttribute("accidentes", cantidadAcc);
 		m.addAttribute("solicitudes", cantidadSolicitudes);
 		m.addAttribute("capacitaciones", solicitudesCapacitacion);
 		m.addAttribute("asesorias", solicitudesAsesorias);
 		m.addAttribute("asesoriasE", solicitudesAsesoriasE);
-		
-		
-		
 		
 		return "ReporteGlobal";
 	}
@@ -155,13 +146,10 @@ public class ControllerAdmin {
 		
 		m.addAttribute("clientes", clientes);
 		
-		
-		
 		return "ListadoClientes";
 	}
 	
-	
-	@GetMapping("Admin/Admin/reporte/{rut}")
+	@GetMapping("Admin/reporte/{rut}")
 	public String reporteClienteRut(@PathVariable String rut, Model m) {
 		
 		Cliente cliente = clienteSer.obtenerCliente(rut);
@@ -230,11 +218,6 @@ public class ControllerAdmin {
 		}
 		
 		
-		
-		
-		
-		
-		
 		m.addAttribute("cliente", cliente);
 		//listado de solicitudes
 		m.addAttribute("solicitudes", solicitudesCliente);
@@ -251,8 +234,7 @@ public class ControllerAdmin {
 		//cantidad de accidentes del cliente
 		m.addAttribute("cantAccidente", cantAccidente);
 		
-		
-		
+	
 		return "ReporteCliente";
 	}
 	

@@ -1,5 +1,7 @@
 package com.involucionados.cotroladores;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.involucionados.modelo.entidades.ReporteAccidente;
 import com.involucionados.modelo.entidades.Usuario;
 import com.involucionados.modelo.repositorios.UsuarioRepo;
 import com.involucionados.servicio.implementaciones.ClienteService;
+import com.involucionados.servicio.implementaciones.ReporteAccService;
 import com.involucionados.servicio.implementaciones.RolService;
 import com.involucionados.servicio.implementaciones.UsuarioService;
 
@@ -44,6 +49,9 @@ public class UsuarioController {
 	 * Mapping login 
 	 * */
 	
+	@Autowired
+	ReporteAccService reporte;
+	
 	@GetMapping("/")
 	public String redireccion(HttpServletRequest servlet,
 		HttpSession sesion ,Model model) {
@@ -54,19 +62,23 @@ public class UsuarioController {
 		System.out.println(servlet.getRemoteUser());
 		u = repousu.findByLogin(servlet.getRemoteUser());
 		String rol = u.getRol().getRol();
+		System.out.println(rol);
 		
 		if(rol.equalsIgnoreCase("cliente")) {
+			System.out.println("Entro cli");
 			sesion.setAttribute("rol",rol);
 			sesion.setAttribute("cliente",u.getCliente());
 			sesion.setAttribute("usuario",u);
 			
 		}else if(rol.equalsIgnoreCase("profesional")) {
+			System.out.println("Entro pro");
 			sesion.setAttribute("rol",rol);
 			sesion.setAttribute("profesional",u.getProfesional());
 			sesion.setAttribute("usuario",u);
 			
-		}else if(rol.equalsIgnoreCase("administrador")) {
-			sesion.setAttribute("rol",rol);
+		}else{
+			System.out.println("Entro admin");
+			sesion.setAttribute("rol","administrador");
 			sesion.setAttribute("administrador",u.getAdministrador());
 			sesion.setAttribute("usuario",u);
 		}
@@ -117,6 +129,19 @@ public class UsuarioController {
 		return "redirect:/Admin/getClientes";
 		
 		
+	}
+	
+	@GetMapping("/Admin/estAccidentes")
+	public String obtenerUsuario(Model model) {
+		List<ReporteAccidente> reportes = new ArrayList<>();
+		int cont =0;
+		
+		for (int i = 0; i < reportes.size(); i++) {
+			cont ++;
+		}
+		model.addAttribute("accidentes", cont);
+		
+		return "accidentes";
 	}
 
 }

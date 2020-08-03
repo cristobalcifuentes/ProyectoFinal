@@ -57,8 +57,6 @@ body {body { background-image:url(https://c.wallhere.com/photos/ce/36/1920x1200_
 						<tr>
 							<td colspan="2"><input type="submit" value="Ingresar"></td>
 
-
-
 						</tr>
 						<tr>
 							<td colspan="2"><a href="/index">Volver al inicio</a>

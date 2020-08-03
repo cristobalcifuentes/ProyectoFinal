@@ -27,7 +27,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="logout">CerrarSession</a>
+					<a class="nav-item nav-link" href="logout">Cerrar Sesion</a>
 				</div>
 			</div>
 		</nav>
@@ -40,9 +40,7 @@
 						<img src="images/Background-2.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">Clientes</h5>
-							<p class="card-text">This is a wider card with supporting
-								text below as a natural lead-in to additional content. This
-								content is a little bit longer.</p>
+							<p class="card-text">Mantenedor Especifico para clientes del sistema</p>
 							<a href="/Admin/getClientes" class="btn btn-info">Ingresar</a>
 						</div>
 					</div>
@@ -52,9 +50,7 @@
 						<img src="images/Background-2.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">Profesionales</h5>
-							<p class="card-text">This is a wider card with supporting
-								text below as a natural lead-in to additional content. This
-								content is a little bit longer.</p>
+							<p class="card-text">Mantenedor Especifico para profesionales del sistema</p>
 							<a href="/Admin/getProfesionales" class="btn btn-info">Ingresar</a>
 						</div>
 					</div>
@@ -66,9 +62,7 @@
 						<img src="images/Background-2.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">Reportes Globales</h5>
-							<p class="card-text">This is a wider card with supporting
-								text below as a natural lead-in to additional content. This
-								content is a little bit longer.</p>
+							<p class="card-text"></p>
 							<a href="Admin/Globales" class="btn btn-info">Ingresar</a>
 						</div>
 					</div>
@@ -94,7 +88,7 @@
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
 									content is a little bit longer.</p>
-								<a href="" class="btn btn-info">Ingresar</a>
+								<a href="/Admin/estAccidentes" class="btn btn-info">Ingresar</a>
 							</div>
 						</div>
 					</div>
@@ -105,9 +99,7 @@
 							<img src="images/Background-2.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Notificar Deudas</h5>
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">Listado de clientes con deudas en el sistema</p>
 								<a href="Admin/Notificaciones" class="btn btn-info">Ingresar</a>
 							</div>
 						</div>
@@ -115,7 +107,7 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

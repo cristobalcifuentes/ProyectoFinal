@@ -53,13 +53,20 @@
         </li>
         <li><a class="cs" href="logout">Cerrar Sesión</a></li>
     </ul>
+    <div class="row container">
+        <h5>Estadisticas del Sistema</h5>
+        <div class="col s12 m4 l4">
+            <canvas id="estausu1" width="200" height="200"></canvas>
+        </div>
+    </div>
     <div class="container">
+     <hr>
     	<div class="row">
 	        <div class="col s12 m10">
-	            <h4 class="header">crear capacitacion</h4>
+	            <h4 class="header">Crear Capacitacion</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="imagenes/checklist.jpg">
+	                    <img src="/images/capacitacion.jpg">
 	                </div> 
 	                <div class="card-stacked">
 	                    <div class="card-content">
@@ -68,7 +75,7 @@
 	                        </p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="/Profesional/crearcapacitacion">Ir</a>
+	                        <a href="/Profesional/crearcapacitacion" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -76,17 +83,17 @@
     	</div>
     	<div class="row">
     		<div class="col s12 m10">
-	            <h4 class="header">lista de capacitaciones</h4>
+	            <h4 class="header">Lista De capacitaciones</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
+	                    <img src="/images/lista.jpg">
 	                </div>
 	                <div class="card-stacked">
-	                    <div class="card-content">
+	                    <div class="card-content ">
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="Profesional/listaCapacitacion">IR</a>
+	                        <a href="Profesional/listaCapacitacion" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -97,14 +104,14 @@
 	            <h4 class="header">crearChek</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
+	                    <img src="/images/check.png">
 	                </div>
 	                <div class="card-stacked">
 	                    <div class="card-content">
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="/Profesional/crearChek">IR</a>
+	                        <a href="/Profesional/crearChek" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -112,17 +119,17 @@
     	</div>
     	<div class="row">
     		<div class="col s12 m10">
-	            <h4 class="header">planificar visita</h4>
+	            <h4 class="header">Planificar Visita</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
+	                    <img src="/images/Visita.jpg">
 	                </div>
 	                <div class="card-stacked">
 	                    <div class="card-content">
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="/Profesional/solicitudesPendientes">IR</a>
+	                        <a href="/Profesional/solicitudesPendientes" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -133,14 +140,14 @@
 	            <h4 class="header">Ingresar Asesoria</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
+	                    <img src="/images/inase.png">
 	                </div>
 	                <div class="card-stacked">
 	                    <div class="card-content">
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="/Profesional/solicitudesAgendadas">IR</a>
+	                        <a href="/Profesional/solicitudesAgendadas" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -151,14 +158,14 @@
 	            <h4 class="header">Listar/Editar Actividad de Mejora</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="imagenes/Usuario.jpg">
+	                    <img src="/images/listar.jpg">
 	                </div>
 	                <div class="card-stacked">
 	                    <div class="card-content">
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="listaActividadMejora">IR</a>
+	                        <a href="Profesional/listaActividadMejora" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -169,35 +176,21 @@
 	            <h4 class="header">ingresar actividad de mejora</h4>
 	            <div class="card horizontal hoverable">
 	                <div class="card-image">
-	                    <img src="/images/Usuario.jpg">
+	                    <img src="/images/ingresar.png">
 	                </div>
 	                <div class="card-stacked">
 	                    <div class="card-content">
 	                        <p>Modulo especifico para la mantencion de Usuarios.</p>
 	                    </div>
 	                    <div class="card-action">
-	                        <a href="nuevaActividadMejora">IR</a>
+	                        <a href="Profesional/nuevaActividadMejora" class="btn"><i class="material-icons right">arrow_forward</i>Ir</a>
 	                    </div>
 	                </div>
 	            </div>
         	</div>
     	</div>
     </div>
-       
-    <div class="row container">
-        <hr>
-        <p>Estadisticas del Sistema</p>
-        <div class="col s12 m4 l4">
-            <canvas id="estausu1" width="200" height="200"></canvas>
-        </div>
-        <div class="col s12 m4 l4">
-            <canvas id="estausu2" width="200" height="200"></canvas>
-        </div>
-        <div class="col s12 m4 l4">
-            <canvas id="estausu3" width="200" height="200"></canvas>
-        </div>
-    </div>
-    <script src="js/admin.js"></script>
+    <script src="/js/prograficos.js"></script>
     <!- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>

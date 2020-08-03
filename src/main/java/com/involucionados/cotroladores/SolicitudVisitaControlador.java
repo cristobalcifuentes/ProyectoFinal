@@ -72,7 +72,8 @@ public class SolicitudVisitaControlador {
 	}
 	
 	@PostMapping("Cliente/Cliente/guardarsolicitud")
-	public String guardarsolicitud(@RequestParam(name="ti") int ti, SolicitudVisita vis, Model m , HttpSession sesion, RedirectAttributes attr) {
+	public String guardarsolicitud(@RequestParam(name="ti") int ti, SolicitudVisita vis, Model m , HttpSession sesion,
+			RedirectAttributes attr) {
 		
 		
 		System.out.println(ti);
@@ -86,12 +87,6 @@ public class SolicitudVisitaControlador {
 		}else if (ti == 3) {
 			tipoVisita = TipoVisitaSer.obtenerTipoVisita(3);
 		}
-		
-		
-		
-		
-		
-		
 		
 		//System.out.println("rut de cliente: " + rut);
 		System.out.println("objeto SolicitudVisita que llega desde el formulario: " + vis);
