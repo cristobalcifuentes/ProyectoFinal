@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -87,10 +87,10 @@
                       <span class="card-title">Formulario Asesoria</span>
                     </div>
                     <div class="card-content">
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae nisi in quam dolores odit. Ipsam magnam consequuntur est? Adipisci quia corporis vel porro recusandae, quibusdam quaerat perspiciatis voluptatibus ratione quasi.</p>
+                      <p>Lorem ipsum dolor sit amet <c:out value="${cliente.rut}"></c:out>, adipisicing elit. Beatae nisi in quam dolores odit. Ipsam magnam consequuntur est? Adipisci quia corporis vel porro recusandae, quibusdam quaerat perspiciatis voluptatibus ratione quasi.</p>
                     </div>
                     <div class="card-action">
-                      <a  class="btn-floating btn-large cyan pulse" href="formVisita.jsp">Ir</a>
+                      <a  class="btn-floating btn-large cyan pulse" href="solicitudvisita">Ir</a>
                     </div>
                   </div>
             </div>

@@ -18,47 +18,41 @@ import javax.persistence.Transient;
 @Table(name = "SOLICITUD_VISITA")
 public class SolicitudVisita {
 	
-	
-	
-	@Id
-	@Column(name="ID")
-	@GeneratedValue(generator = "autoincrementSolicitudolicitud")
-	@SequenceGenerator(name = "autoincrementSolicitud", sequenceName = "SEC_SOL_VISITA", allocationSize = 1)
-	private int id;
-	
-	
-	
 	@ManyToOne
 	@JoinColumn(name="ESTADO_SOLICITUD_ID")
 	private EstadoSolicitud estado;
+	
+	@ManyToOne
+	@JoinColumn(name="CLIENTE_RUT")
+	private Cliente cliente;
+	
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(generator = "autoincrementSolicitud")
+	@SequenceGenerator(name = "autoincrementSolicitud", sequenceName = "SEC_SOL_VISITA", allocationSize = 1)
+	private int id;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="TIPO_ID")
 	private TipoVisita tipo;
 	
 	
-	
-	
-	
-	@ManyToOne
-	@JoinColumn(name="CLIENTE_RUT")
-	private Cliente cliente;
-	
 	@OneToMany(mappedBy="solicitud")
 	private List<Visita> visita;
 	
 	
-	@Transient
-	private Visita visitaAsociada;
+	//@Transient
+	//private Visita visitaAsociada;
 	
-	public Visita getVisitaAsociada() {
-		return visitaAsociada;
-	}
-
-
-	public void setVisitaAsociada(Visita visitaAsociada) {
-		this.visitaAsociada = visitaAsociada;
-	}
+//	public Visita getVisitaAsociada() {
+//		return visitaAsociada;
+//	}
+//
+//
+//	public void setVisitaAsociada(Visita visitaAsociada) {
+//		this.visitaAsociada = visitaAsociada;
+//	}
 
 
 	public List<Visita> getVisita() {
@@ -138,7 +132,7 @@ public class SolicitudVisita {
 	@Override
 	public String toString() {
 		return "SolicitudVisita [id=" + id + ", estado=" + estado + ", tipo=" + tipo + ", cliente=" + cliente
-				+ ", visitaAsociada=" + visitaAsociada + "]";
+				+ ", visitaAsociada=]";
 	}
 
 
