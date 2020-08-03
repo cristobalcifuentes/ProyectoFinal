@@ -42,17 +42,17 @@ public class SolicitudVisita {
 	private List<Visita> visita;
 	
 	
-	//@Transient
-	//private Visita visitaAsociada;
+	@Transient
+	private Visita visitaAsociada;
 	
-//	public Visita getVisitaAsociada() {
-//		return visitaAsociada;
-//	}
-//
-//
-//	public void setVisitaAsociada(Visita visitaAsociada) {
-//		this.visitaAsociada = visitaAsociada;
-//	}
+	public Visita getVisitaAsociada() {
+		return visitaAsociada;
+	}
+
+
+	public void setVisitaAsociada(Visita visitaAsociada) {
+		this.visitaAsociada = visitaAsociada;
+	}
 
 
 	public List<Visita> getVisita() {

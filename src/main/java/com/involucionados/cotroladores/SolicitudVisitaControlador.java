@@ -38,23 +38,23 @@ public class SolicitudVisitaControlador {
 	IEstadoSolicitud estadosol;
 	
 	
-		@RequestMapping("Cliente/solicitudvisita")
+		@RequestMapping("Cliente/Cliente/solicitudvisita")
 		public String crearSolicitudVisita(Model m ) {
 		System.out.println("prueba");
-		System.out.println(sesion);
+		//System.out.println(sesion);
 		
 		//Cliente cliente = (Cliente) sesion.getAttribute("cliente");
 		
 		
-		TipoVisita capacitacion = TipoVisitaSer.obtenerTipoVisita(1);
-		TipoVisita asesoria = TipoVisitaSer.obtenerTipoVisita(2);
-		TipoVisita asesoriae = TipoVisitaSer.obtenerTipoVisita(3);
+		//TipoVisita capacitacion = TipoVisitaSer.obtenerTipoVisita(1);
+		//TipoVisita asesoria = TipoVisitaSer.obtenerTipoVisita(2);
+		//TipoVisita asesoriae = TipoVisitaSer.obtenerTipoVisita(3);
 		
 		
 	
-		m.addAttribute("cap", capacitacion);
-		m.addAttribute("ase", asesoria);
-		m.addAttribute("asee", asesoriae);
+		//m.addAttribute("cap", capacitacion);
+		//m.addAttribute("ase", asesoria);
+		//m.addAttribute("asee", asesoriae);
 			
 		//creamos un objeto de tipo solicitudVisita vacio
 		SolicitudVisita vis= new SolicitudVisita ();
@@ -71,14 +71,29 @@ public class SolicitudVisitaControlador {
 		  
 	}
 	
-	@PostMapping("Cliente/guardarsolicitud")
-	public String guardarsolicitud(SolicitudVisita vis, Model m , HttpSession sesion, RedirectAttributes attr) {
+	@PostMapping("Cliente/Cliente/guardarsolicitud")
+	public String guardarsolicitud(@RequestParam(name="ti") int ti, SolicitudVisita vis, Model m , HttpSession sesion, RedirectAttributes attr) {
+		
+		
+		System.out.println(ti);
+		
+		TipoVisita tipoVisita = null;
+		
+		if(ti == 1) {
+			 tipoVisita = TipoVisitaSer.obtenerTipoVisita(1);
+		}else if (ti == 2) {
+			tipoVisita = TipoVisitaSer.obtenerTipoVisita(2);
+		}else if (ti == 3) {
+			tipoVisita = TipoVisitaSer.obtenerTipoVisita(3);
+		}
 		
 		
 		
 		
 		
-		System.out.println("rut de cliente: " + rut);
+		
+		
+		//System.out.println("rut de cliente: " + rut);
 		System.out.println("objeto SolicitudVisita que llega desde el formulario: " + vis);
 		
 		// creamos un objeto de tipo SolicitudVisita y le asignamos el que nos llego del formulario
@@ -100,6 +115,8 @@ public class SolicitudVisitaControlador {
 		solicitud.setCliente(c);
 		System.out.println("objeto solicitudvista despues de agregar al cliente: " + solicitud);
 		
+		solicitud.setTipo(tipoVisita);
+		System.out.println("objeto solicitudvista despues de agregar al tipovisita: " + solicitud);
 		
 		
 		SolicitudVisitaSer.agregarSolicitud(solicitud);

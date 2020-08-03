@@ -54,15 +54,15 @@
     </ul>
     <div class="container">
     
-        <form:form action="guardarsolicitud" method="post">
+        <form action="guardarsolicitud" method="post">
         
-            <form:radiobutton path="tipo" value="${cap}" /> Capacitaci�n <br/>
-            <form:radiobutton path="tipo" value="${ase}"/>  Asesoria <br/>
-            <form:radiobutton path="tipo" value="${asee}" /> Asesoria Especial<br/>
+            <input type="radio" name="ti" value="1" /> Capacitaci�n <br/>
+            <input type="radio" name="ti" value="2" />   Asesoria <br/>
+            <input type="radio" name="ti" value="3" />  Asesoria Especial<br/>
             
             <input type="submit" value="Solicitar" />
 
-        </form:form>
+        </form>
     </div>
 
 </body>
