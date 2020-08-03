@@ -84,13 +84,13 @@
                 <div class="card hoverable medium">
                     <div class="card-image">
                       <img class="image" src="https://asesorias.com/empresas/wp-content/uploads/2020/01/como-crear-asesoria.jpg">
-                      <span class="card-title">Formulario Asesoria</span>
+                      <span class="card-title">SOLICITAR VISITA</span>
                     </div>
                     <div class="card-content">
                       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae nisi in quam dolores odit. Ipsam magnam consequuntur est? Adipisci quia corporis vel porro recusandae, quibusdam quaerat perspiciatis voluptatibus ratione quasi.</p>
                     </div>
                     <div class="card-action">
-                      <a  class="btn-floating btn-large cyan pulse" href="formVisita.jsp">Ir</a>
+                      <a  class="btn-floating btn-large cyan pulse" href="Cliente/solicitudvisita">Ir</a>
                     </div>
                   </div>
             </div>

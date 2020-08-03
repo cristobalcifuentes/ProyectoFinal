@@ -18,6 +18,7 @@
 		<form:radiobutton path="tipo" value="${cap}" /> Capacitación <br/>
 		<form:radiobutton path="tipo" value="${ase}"/>  Asesoria <br/>
 		<form:radiobutton path="tipo" value="${asee}" /> Asesoria Especial <br/>
+		<input type="hidden" value="${usuario.getCliente().getRut()}" name="rutCliente"/>
 		
 
 		<input type="submit" value="Solicitar" />

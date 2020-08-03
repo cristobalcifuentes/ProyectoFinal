@@ -2,11 +2,14 @@ package com.involucionados.cotroladores;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.involucionados.modelo.entidades.Cliente;
 import com.involucionados.modelo.entidades.EstadoSolicitud;
@@ -34,9 +37,13 @@ public class SolicitudVisitaControlador {
 	IEstadoSolicitud estadosol;
 	
 	
-		@RequestMapping("Cliente/solicitudvisita")
-		public String crearSolicitudVisita(Model m) {
+		@RequestMapping("Cliente/Cliente/solicitudvisita")
+		public String crearSolicitudVisita(Model m, HttpSession sesion ) {
 		System.out.println("prueba");
+		System.out.println(sesion);
+		
+		//Cliente cliente = (Cliente) sesion.getAttribute("cliente");
+		
 		
 		TipoVisita capacitacion = TipoVisitaSer.obtenerTipoVisita(1);
 		TipoVisita asesoria = TipoVisitaSer.obtenerTipoVisita(2);
@@ -52,6 +59,7 @@ public class SolicitudVisitaControlador {
 		
 						
 		m.addAttribute("command", vis);
+		//m.addAttribute("cliente", cliente);
 		
 		
 		  return "CrearSolicitudVisita";
@@ -60,10 +68,10 @@ public class SolicitudVisitaControlador {
 		  
 	}
 	
-	@PostMapping("Cliente/guardarsolicitud")
-	public String guardarsolicitud(SolicitudVisita vis, Model m ) {
+	@PostMapping("Cliente/Cliente/guardarsolicitud")
+	public String guardarsolicitud(@RequestParam(name="rutCliente") String rut, SolicitudVisita vis, Model m ,HttpSession sesion ) {
 		
-		
+		System.out.println("rut de cliente: " + rut);
 		System.out.println("objeto SolicitudVisita que llega desde el formulario: " + vis);
 		
 		// creamos un objeto de tipo SolicitudVisita y le asignamos el que nos llego del formulario
@@ -79,30 +87,19 @@ public class SolicitudVisitaControlador {
 		
 
 		//creamos un objeto de tipo cliente
-		Cliente cliente = clienteSer.obtenerCliente("123456");
+		
+		Cliente cliente = (Cliente) sesion.getAttribute("cliente");
+
+		
+		System.out.println("cliente capturado por sesion " + cliente);
 		
 		//agregamos el objeto cliente como atributo al objeto SolicituVisita
 		solicitud.setCliente(cliente);
 		System.out.println("objeto solicitudvista despues de agregar al cliente: " + solicitud);
-		
-		
-		
-		
+	
 		return "redirect:/Cliente";
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 	}
 	
 	
