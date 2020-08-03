@@ -50,6 +50,7 @@
 			alert('Error de Login o Password');
 		</script>
     </c:if>
+    ${SPRING_SECURITY_LAST_EXCEPTION.message}
     <div class="row login">
         <div class="col s12 l4 offset-l4">
             <div class="card">

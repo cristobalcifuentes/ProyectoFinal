@@ -11,9 +11,5 @@ public class SeguridadApplication {
 		SpringApplication.run(SeguridadApplication.class, args);
 	}
 	
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/inicio").setViewName("inicio");
-	}
-
 	
 }

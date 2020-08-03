@@ -31,7 +31,7 @@
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="index.jsp">Inicio</a></li>
             <li><a href="perfil.jsp"><c:out value="${usuario.nombre}"></c:out></a></li>
-            <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+            <li><a class="cs" href="/logout">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -45,21 +45,17 @@
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="/Cliente">Inicio</a></li>
         <li><a href="perfil.jsp">Perfil</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
         <li>
         <div class="divider"></div>
         </li>
-        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+        <li><a class="cs" href="/logout">Cerrar Sesión</a></li>
     </ul>
-    <c:if test="${mensaje != null}">
-		<c:out value="${mensaje}" />
-    </c:if>
-    
+
     <div class="container">
         <h3 class="blue white-text">Formulario de Accidente</h3>
-        <form action="accidente" method="post">
+        <form action="/Cliente/formularios/formAccidente" method="post">
             <p><strong>Identificacion del Empleador</strong></p>
             <div class="row">
             	<div class="col s12 l4 green lighten-5">
@@ -126,7 +122,7 @@
                     <label for="txtcomtra">Comuna (*)</label>
                 </div>
                 <div class="col s12 l3 green lighten-5">
-                    <input type="text" name="txtteltra" required maxlength="9" class="validate"> 
+                    <input type="number" name="txtteltra" required maxlength="9" class="validate"> 
                     <label for="txtteltra">Telefono (*)</label>
                 </div>
             </div>
@@ -156,10 +152,8 @@
 	 					 </button>
 	                </div>
                 </div>
-            </div>
         </form>
-    </div>
-    
+          </div>
    
 
     <!- Compiled and minified JavaScript -->

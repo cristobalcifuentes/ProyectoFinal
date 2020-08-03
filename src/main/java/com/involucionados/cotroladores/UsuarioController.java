@@ -43,6 +43,7 @@ public class UsuarioController {
 	/** 
 	 * Mapping login 
 	 * */
+	
 	@GetMapping("/")
 	public String redireccion(HttpServletRequest servlet,
 		HttpSession sesion ,Model model) {

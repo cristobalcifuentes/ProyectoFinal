@@ -31,7 +31,7 @@ public class ControllerAccidente {
 	TrabajadorService traS;
 
 
-	@RequestMapping("/Cliente/formularios/formAccidente")
+	@RequestMapping("Cliente/formularios/formAccidente")
 	public String comprobarDeuda(HttpSession sesion,RedirectAttributes attr) {
 		String res = "";
 		Cliente c = (Cliente) sesion.getAttribute("cliente");
@@ -58,7 +58,7 @@ public class ControllerAccidente {
 		int telTra = Integer.parseInt(todos.get("txtteltra"));
 		String sexTra = todos.get("sexo");
 		
-		 
+		 System.out.println("accidente");
 		 ReporteAccidente r = new ReporteAccidente();
 		 r.setId(serie);
 		 r.setFecha(obtenerFecha());
@@ -69,7 +69,7 @@ public class ControllerAccidente {
 		 Trabajador t = new Trabajador(rutTra, nomTra, dirTra, comTra, telTra, sexTra,r);
 		 traS.saveTrabajador(t);
 		 attr.addFlashAttribute("reporte",true);
-		return "redirect:/formulario";
+		return "redirect:/Cliente/formularios";
 	}
 	
 	public String obtenerFecha() {
