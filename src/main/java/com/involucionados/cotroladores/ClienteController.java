@@ -80,7 +80,7 @@ public class ClienteController {
 		return "inicio";
 	}
 	
-	@GetMapping("/Cliente/formularios")
+	@GetMapping("Cliente/formularios")
 	public String formularios() {
 		return "formularios";
 	}

@@ -27,26 +27,34 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		/** 
-		 * Se obtiene el usuario a travez de nombre de usuario
-		 * */
-		Usuario us = repo.findByLogin(username);
-		
-		/** 
-		 * Se crea una lista de roles para entregarsela a Security
-		 * */
-		List<GrantedAuthority> roles = new ArrayList<>();
-			roles.add(new SimpleGrantedAuthority(us.getRol().getRol()));
+		try {
+			/** 
+			 * Se obtiene el usuario a travez de nombre de usuario
+			 * */
+			Usuario us = repo.findByLogin(username);
 			
 			/** 
-			 * Se crea el objeto a retornar con sus credenciales
+			 * Se crea una lista de roles para entregarsela a Security
 			 * */
-			UserDetails userDet = new User(us.getLogin(),us.getPassword(),roles);
+			List<GrantedAuthority> roles = new ArrayList<>();
+				roles.add(new SimpleGrantedAuthority(us.getRol().getRol()));
+				
+				/** 
+				 * Se crea el objeto a retornar con sus credenciales
+				 * */
+				UserDetails userDet = new User(us.getLogin(),us.getPassword(),roles);
+			
+				/** 
+				 * Se retorna el objeto del tipo UserDetails
+				 * */
+			return userDet;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 		
-			/** 
-			 * Se retorna el objeto del tipo UserDetails
-			 * */
-		return userDet;
+		
 		
 	}
 	

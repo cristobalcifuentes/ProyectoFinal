@@ -65,14 +65,15 @@ public class SecurityConfiguracion extends WebSecurityConfigurerAdapter{
 		.csrf().disable()
 		.authorizeRequests()
 		.antMatchers(resources).permitAll()
-		.antMatchers("Admin/*").hasRole("administrador")
-		.antMatchers("Cliente/*").hasRole("cliente")
-		.antMatchers("Profesional/*").hasRole("profesional")
+		.antMatchers("Admin/**").hasRole("ADMIN")
+		.antMatchers("Cliente/**").hasRole("USER")
+		.antMatchers("Profesional/**").hasRole("PRO")
 			.anyRequest().authenticated()
 			.and()
 		.formLogin()
 			.loginPage("/login")
 			.permitAll()
+			.defaultSuccessUrl("/")
 			.usernameParameter("usuario")
 			.passwordParameter("contrasena")
 			.and()
@@ -81,6 +82,4 @@ public class SecurityConfiguracion extends WebSecurityConfigurerAdapter{
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout");
 	}
 	
-	
-
 }
