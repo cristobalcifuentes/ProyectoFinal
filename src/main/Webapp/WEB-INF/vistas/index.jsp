@@ -63,8 +63,7 @@
 </a><br/>
 <a href="solicitudesAgendadas">ingresar asesoria
 </a><br/>
-
-</a><br/>
+<a href="solicitudvisita">Solicitar Visita</a><br/>
 
 <div class="container">
       <a href="/inicio/Cliente">Acceso Clientes</a>
