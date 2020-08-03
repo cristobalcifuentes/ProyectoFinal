@@ -73,6 +73,7 @@ public class SecurityConfiguracion extends WebSecurityConfigurerAdapter{
 		.formLogin()
 			.loginPage("/login")
 			.permitAll()
+			.defaultSuccessUrl("/")
 			.usernameParameter("usuario")
 			.passwordParameter("contrasena")
 			.and()
@@ -81,6 +82,4 @@ public class SecurityConfiguracion extends WebSecurityConfigurerAdapter{
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout");
 	}
 	
-	
-
 }

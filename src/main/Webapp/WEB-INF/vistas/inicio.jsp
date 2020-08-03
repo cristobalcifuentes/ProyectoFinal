@@ -41,7 +41,7 @@
             </div>
         </li>
         <li><a href="#">Perfil</a></li>
-        <li><a href="formulario">Solicitar Visita</a></li>
+        <li><a href="/Cliente/formulario">Solicitar Visita</a></li>
         <li>
             <div class="divider"></div>
         </li>
