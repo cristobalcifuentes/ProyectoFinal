@@ -175,6 +175,13 @@ public class Cliente {
 	  
 	  public void setSolicitudVisitas(List<SolicitudVisita> solicitudVisitas) {
 	  this.solicitudVisitas = solicitudVisitas; }
+
+	@Override
+	public String toString() {
+		return "Cliente [rut=" + rut + ", razonsocial=" + razonsocial + ", direccion=" + direccion + ", comuna="
+				+ comuna + ", telefono=" + telefono + ", actividadEco=" + actividadEco + ", tipEmpresa=" + tipEmpresa
+				+ ", usuario=" + usuario + ", email=" + email + "]";
+	}
 	 
 	
 	

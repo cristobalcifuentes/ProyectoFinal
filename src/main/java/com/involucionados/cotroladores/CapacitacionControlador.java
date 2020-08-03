@@ -42,7 +42,7 @@ public class CapacitacionControlador {
 
 	}
 
-	@RequestMapping("Profesional/listaCapacitacion")
+	@RequestMapping("Profesional/Profesional/listaCapacitacion")
 	public String listaCapacitacion(Model m) {
 		m.addAttribute("lista", capacitacion.listarCapacitacion());
 		return "ListaCapacitacion";

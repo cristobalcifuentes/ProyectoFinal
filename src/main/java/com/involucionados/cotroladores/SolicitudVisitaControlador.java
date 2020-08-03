@@ -12,7 +12,6 @@ import com.involucionados.modelo.entidades.Cliente;
 import com.involucionados.modelo.entidades.EstadoSolicitud;
 import com.involucionados.modelo.entidades.SolicitudVisita;
 import com.involucionados.modelo.entidades.TipoVisita;
-import com.involucionados.servicio.implementaciones.EstadoSolicitudServicio;
 import com.involucionados.servicio.interfaces.IClienteService;
 import com.involucionados.servicio.interfaces.IEstadoSolicitud;
 import com.involucionados.servicio.interfaces.ISolicitudVisitaServicio;
@@ -35,7 +34,7 @@ public class SolicitudVisitaControlador {
 	IEstadoSolicitud estadosol;
 	
 	
-		@RequestMapping("solicitudvisita")
+		@RequestMapping("Cliente/solicitudvisita")
 		public String crearSolicitudVisita(Model m) {
 		System.out.println("prueba");
 		
@@ -61,7 +60,7 @@ public class SolicitudVisitaControlador {
 		  
 	}
 	
-	@PostMapping("guardarsolicitud")
+	@PostMapping("Cliente/guardarsolicitud")
 	public String guardarsolicitud(SolicitudVisita vis, Model m ) {
 		
 		
@@ -89,7 +88,7 @@ public class SolicitudVisitaControlador {
 		
 		
 		
-		return "redirect:/index";
+		return "redirect:/Cliente";
 	
 		
 		

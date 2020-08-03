@@ -1,5 +1,7 @@
 package com.involucionados.servicio.implementaciones;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,13 @@ public class ReporteAccService implements IReporteAccidenteService{
 	@Override
 	public void saveReporteAcc(ReporteAccidente reporte) {
 			this.repo.save(reporte);
+	}
+
+
+	@Override
+	public List<ReporteAccidente> listarAccidentes() {
+		
+		return repo.findAll();
 	}
 
 }
