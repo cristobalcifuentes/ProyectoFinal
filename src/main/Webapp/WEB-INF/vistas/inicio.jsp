@@ -20,6 +20,11 @@
 </head>
 
 <body>
+	<c:if test="${confirmacion eq true }">
+		<script type="text/javascript">
+			alert("Solicitud Ingresada");
+		</script>
+	</c:if>
     <nav class="nav-wrapper blue lighten-1">
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">Sistema</a>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -41,7 +41,7 @@
         <ul id="nav-mobile" class="right  hide-on-med-and-down">
             <li><a href="/Cliente">Inicio</a></li>
             <li><a href="perfil.jsp">${usuario.nombre}</a></li>
-            <li><a class="cs" href="/logout">Cerrar Sesión</a></li>
+            <li><a class="cs" href="/logout">Cerrar Sesiï¿½n</a></li>
         </ul>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -61,7 +61,7 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a class="cs" href="logout">Cerrar Sesión</a></li>
+        <li><a class="cs" href="logout">Cerrar Sesiï¿½n</a></li>
     </ul>
 
     <div class="container">
@@ -87,7 +87,7 @@
                       <span class="card-title">SOLICITAR VISITA</span>
                     </div>
                     <div class="card-content">
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae nisi in quam dolores odit. Ipsam magnam consequuntur est? Adipisci quia corporis vel porro recusandae, quibusdam quaerat perspiciatis voluptatibus ratione quasi.</p>
+                      <p>Lorem ipsum dolor sit amet <c:out value="${cliente.rut}"></c:out>, adipisicing elit. Beatae nisi in quam dolores odit. Ipsam magnam consequuntur est? Adipisci quia corporis vel porro recusandae, quibusdam quaerat perspiciatis voluptatibus ratione quasi.</p>
                     </div>
                     <div class="card-action">
                       <a  class="btn-floating btn-large cyan pulse" href="Cliente/solicitudvisita">Ir</a>

@@ -1,6 +1,6 @@
 package com.involucionados.cotroladores;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.involucionados.modelo.entidades.Cliente;
 import com.involucionados.modelo.entidades.EstadoSolicitud;
@@ -37,8 +38,8 @@ public class SolicitudVisitaControlador {
 	IEstadoSolicitud estadosol;
 	
 	
-		@RequestMapping("Cliente/Cliente/solicitudvisita")
-		public String crearSolicitudVisita(Model m, HttpSession sesion ) {
+		@RequestMapping("Cliente/solicitudvisita")
+		public String crearSolicitudVisita(Model m ) {
 		System.out.println("prueba");
 		System.out.println(sesion);
 		
@@ -49,6 +50,8 @@ public class SolicitudVisitaControlador {
 		TipoVisita asesoria = TipoVisitaSer.obtenerTipoVisita(2);
 		TipoVisita asesoriae = TipoVisitaSer.obtenerTipoVisita(3);
 		
+		
+	
 		m.addAttribute("cap", capacitacion);
 		m.addAttribute("ase", asesoria);
 		m.addAttribute("asee", asesoriae);
@@ -68,8 +71,12 @@ public class SolicitudVisitaControlador {
 		  
 	}
 	
-	@PostMapping("Cliente/Cliente/guardarsolicitud")
-	public String guardarsolicitud(@RequestParam(name="rutCliente") String rut, SolicitudVisita vis, Model m ,HttpSession sesion ) {
+	@PostMapping("Cliente/guardarsolicitud")
+	public String guardarsolicitud(SolicitudVisita vis, Model m , HttpSession sesion, RedirectAttributes attr) {
+		
+		
+		
+		
 		
 		System.out.println("rut de cliente: " + rut);
 		System.out.println("objeto SolicitudVisita que llega desde el formulario: " + vis);
@@ -87,16 +94,17 @@ public class SolicitudVisitaControlador {
 		
 
 		//creamos un objeto de tipo cliente
-		
-		Cliente cliente = (Cliente) sesion.getAttribute("cliente");
-
-		
-		System.out.println("cliente capturado por sesion " + cliente);
-		
+		Cliente c = new Cliente();
+		c= (Cliente) sesion.getAttribute("cliente");
 		//agregamos el objeto cliente como atributo al objeto SolicituVisita
-		solicitud.setCliente(cliente);
+		solicitud.setCliente(c);
 		System.out.println("objeto solicitudvista despues de agregar al cliente: " + solicitud);
-	
+		
+		
+		
+		SolicitudVisitaSer.agregarSolicitud(solicitud);
+		
+		attr.addFlashAttribute("confirmacion",true);
 		return "redirect:/Cliente";
 	
 			
